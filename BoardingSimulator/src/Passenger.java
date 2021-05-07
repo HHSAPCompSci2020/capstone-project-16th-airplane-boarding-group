@@ -27,10 +27,16 @@ public class Passenger {
 		marker.circle(x, y, radius);
 	}
 	
-	private void walk() {
+	private void walk(int seatX, int seatY) {
+		
 		
 	}
-	public void act() {
+	public void act(int seatX, int seatY) {
+		
+		walk(seatX, seatY);
+		if(seatX == x && seatY == y) {
+			isSeated = true;
+		}
 	}
 	
 	private void sit() {
@@ -39,6 +45,7 @@ public class Passenger {
 	private void locateSeat() {
 		
 	}
+	
 	
 	
 }
