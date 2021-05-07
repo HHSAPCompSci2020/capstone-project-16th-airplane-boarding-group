@@ -6,13 +6,16 @@ public class Passenger {
 	private int x, y;
 	private int radius;
 	private int speed;
-	private Color boardingGroup;
+	private int seatLocationX;
+	private int seatLocationY;
 	
-	public Passenger(int x, int y, int radius, Color boardingGroup) {
+	public Passenger(int x, int y, int radius, Color boardingGroup, int seatLocationX, int seatLocationY) {
 		this.x = x;
 		this.y = y;
 		this.radius = radius;
-		this.boardingGroup = boardingGroup;
+		this.seatLocationX = seatLocationX;
+		this.seatLocationY = seatLocationY;
+		
 		speed = (int)((Math.random() * 10) +1);
 	}
 	
