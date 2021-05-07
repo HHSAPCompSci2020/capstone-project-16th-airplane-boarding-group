@@ -1,16 +1,19 @@
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
 import processing.core.PApplet;
 public class Aircraft {
 	int length,width;
 	int x,y;
 	Seats [][]aisle1 = new Seats[3][7];
 	Seats [][]aisle2 = new Seats[3][7];
-	
+	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 	public Aircraft() {
 		x=0;
 		y=100;
 		// later update this so it matches the size of the adjustable panel, so get the variable somehow from jpanel
-		width= 1000;
-		length = 400;
+		width= (int) screenSize.getWidth();
+		length = (int) screenSize.getHeight()/2;
 		this.fillValues();
 	
 	}
