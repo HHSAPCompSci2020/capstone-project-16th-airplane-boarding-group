@@ -22,6 +22,14 @@ public class Seats
 		marker.square(x,y,sideLength);
 	}
 	
+	public void setBoardingGroupNames() {
+		
+	}
+	
+	public void setBoardingGroup() {
+		
+	}
+	
 	
 	
 }
