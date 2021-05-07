@@ -27,8 +27,9 @@ public class Passenger {
 		marker.circle(x, y, radius);
 	}
 	
-	private void walk(int seatX, int seatY) {
-		
+	private void walk(int seatX, int seatY) 
+	{
+		x+=10;
 		
 	}
 	public void act(int seatX, int seatY) {
