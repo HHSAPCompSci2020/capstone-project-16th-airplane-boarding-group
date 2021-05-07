@@ -32,16 +32,13 @@ public class Passenger {
 		
 	}
 	public void act(int seatX, int seatY) {
-		
-		walk(seatX, seatY);
-		if(seatX == x && seatY == y) {
-			isSeated = true;
+		while(!isSeated) {
+			walk(seatX, seatY);
 		}
+
 	}
 	
-	private void sit() {
-		
-	}
+	
 	private void locateSeat() {
 		
 	}
