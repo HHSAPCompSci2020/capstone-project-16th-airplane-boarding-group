@@ -4,6 +4,7 @@ public class Aircraft {
 	int x,y;
 	Seats [][]aisle1 = new Seats[3][7];
 	Seats [][]aisle2 = new Seats[3][7];
+	int X = 0;
 	public Aircraft() {
 		x=0;
 		y=100;
