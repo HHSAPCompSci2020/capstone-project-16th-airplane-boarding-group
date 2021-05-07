@@ -84,6 +84,7 @@ Seat Layout - The setup of how the seating phase of the simulation is portrayed
 Credits:
 [Gives credit for project components. This includes both internal credit (your group members) and external credit (other people, websites, libraries). To do this:
 List the group members and describe how each member contributed to the completion of the final program. This could be classes written, art assets created, leadership/organizational skills exercises, or other tasks. Initially, this is how you plan on splitting the work.
+
 Joshua Choi: Project Idea,README, Lining Group, Seat Layout
 
 Vamsee Krishna Vusuwandla: README,Drawing surface , UML, Graphics art
