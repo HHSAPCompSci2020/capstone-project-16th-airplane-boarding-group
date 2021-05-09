@@ -2,6 +2,11 @@ import processing.awt.PSurfaceAWT;
 import processing.core.PApplet;
 import java.awt.Dimension;
 import javax.swing.JFrame;
+/**
+ * main method of the program sets the window
+ * @author joshua choi
+ *
+ */
 public class Main {
 
 	public static void main(String[] args) {
