@@ -2,6 +2,11 @@ import processing.awt.PSurfaceAWT;
 import processing.core.PApplet;
 import java.awt.Dimension;
 import javax.swing.JFrame;
+/**
+ * main method of the program sets the window
+ * @author joshua choi
+ *
+ */
 public class Main {
 
 	public static void main(String[] args) {
@@ -12,7 +17,7 @@ public class Main {
 		PSurfaceAWT.SmoothCanvas canvas = (PSurfaceAWT.SmoothCanvas) surf.getNative();
 		JFrame window = (JFrame)canvas.getFrame();
 
-		window.setSize(1000, 600);
+		window.setSize(1280, 720);
 		window.setMinimumSize(new Dimension(200,200));
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setResizable(true);
