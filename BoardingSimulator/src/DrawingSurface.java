@@ -4,9 +4,12 @@ public class DrawingSurface extends PApplet
 	boolean playbuttonPressed=false;
 	boolean createBoardingPressed=false;
 	boolean presetsPressed=false;
-	boolean queueX=false;
+	boolean queueButtonPressed = false;
 
-	int playX=10,playY=10;
+	int playX=10,buttonY=10;
+	
+	int queueX = 100;
+	
 	//int createBoardingGroupX,createBoardingGroupY;
 	//int presetsX,presetsY;
 	//int queueX,queueY;
@@ -23,27 +26,46 @@ public class DrawingSurface extends PApplet
 		else {
 			fill(200);
 		}
+		rect(playX,buttonY,width,width/2); // play button
 		
-		rect(playX,playY,width,width/2);
+		if(queueButtonPressed)
+		{
+			fill(225,0,0);
+		}
+		
+		else {
+			fill(200);
+		}
+		rect(queueX, buttonY, width, width/2); // queue button
 		fill(0);
-		textSize(25);
-		text("Play", 25,33);
+		textSize(20);
+		text("Play", 35,40);
+		textSize(20);
+		text("Create Queue", 110, 40);
 
 		boeing747.draw(this);
 	}
 	public void mousePressed()
 	{
-		if(mouseX > playX && mouseX < (playX + width) && mouseY > playY && mouseY < playY + (width/2))
+		if(mouseX > playX && mouseX < (playX + width) && mouseY > buttonY && mouseY < buttonY + (width/2))
 		{
 			playbuttonPressed=true;
+		}
+		
+		if(mouseX > queueX && mouseX < (queueX + width) && mouseY > buttonY && mouseY < buttonY + (width/2))
+		{
+			queueButtonPressed=true;
 		}
 
 	}
 	public void mouseReleased()
 	{
-		if(mouseX > playX && mouseX < (playX + width) && mouseY > playY && mouseY < playY + (width/2))
+		if(playbuttonPressed)
 		{
 			playbuttonPressed=false;
+		}
+		if(queueButtonPressed) {
+			queueButtonPressed = false;
 		}
 	}
 }
