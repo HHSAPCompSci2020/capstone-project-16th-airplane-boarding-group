@@ -9,12 +9,14 @@ public class Aircraft {
 	Seats [][]aisle2 = new Seats[3][7];
 	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 	public Aircraft() {
+		
 		x=0;
-		y=100;
+		y=(int) screenSize.getHeight()/8;
 		// later update this so it matches the size of the adjustable panel, so get the variable somehow from jpanel
 		width= (int) screenSize.getWidth();
-		length = (int) screenSize.getHeight()/2;
+		length = (int) (screenSize.getHeight()*1.5)/2;
 		this.fillValues();
+		System.out.println("Use Full Screen for maximum experience");
 	
 	}
 	public void draw(PApplet marker)
@@ -28,6 +30,12 @@ public class Aircraft {
 				aisle1[i][j].draw(marker);
 			}
 		}
+		for(int i=0;i<aisle2.length;i++) {
+			for(int j=0;j<aisle2[0].length;j++)
+			{
+				aisle2[i][j].draw(marker);
+			}
+		}
 			
 			
 		
@@ -39,12 +47,28 @@ public class Aircraft {
 			
 			for(int j =0;j<aisle1[0].length;j++)
 			{
-				// L-2(l) - 6(5)/aisle1[0].length
+		
 
-				float widthSeat = (width-2*50-6*5)/(2*aisle1[0].length);
-				float  rectX = x+50 +j* widthSeat+5*j;
-				float rectY = y +50+ i*widthSeat+5*i;
+				float widthSeat = (float)screenSize.getHeight()/12;
+				float  rectX = x+(float)screenSize.getHeight()/4 +j* widthSeat+((float)screenSize.getHeight()/36)*j;
+				float rectY = y + i*widthSeat+((float)screenSize.getHeight()/36)*i;
 				aisle1[i][j]=new Seats(rectX,rectY,widthSeat);
+				
+
+				
+			}
+		}
+		for (int i=0;i<aisle2.length;i++)
+		{
+			
+			for(int j =0;j<aisle2[0].length;j++)
+			{
+				
+
+				float widthSeat = (float)screenSize.getHeight()/12;
+				float  rectX = x+(float)screenSize.getHeight()/4 +j* widthSeat+((float)screenSize.getHeight()/36)*j;
+				float rectY = (float)(screenSize.getHeight()*(41.0/72)) + i*widthSeat+((float)screenSize.getHeight()/36)*i;
+				aisle2[i][j]=new Seats(rectX,rectY,widthSeat);
 				
 
 				

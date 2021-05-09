@@ -16,6 +16,7 @@ public class Seats
 		BoardingColor=Color.WHITE;
 		
 	}
+	
 	public void draw(PApplet marker)
 	{
 		marker.fill(BoardingColor.getRed(),BoardingColor.getBlue(),BoardingColor.getGreen());

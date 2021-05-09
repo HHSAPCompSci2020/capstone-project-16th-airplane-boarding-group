@@ -30,6 +30,7 @@ public class DrawingSurface extends PApplet
 		text("Play", 25,33);
 
 		boeing747.draw(this);
+		
 	}
 	public void mousePressed()
 	{
