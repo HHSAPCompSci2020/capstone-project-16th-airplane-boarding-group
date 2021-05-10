@@ -59,6 +59,14 @@ public class Passenger {
 	
 	private boolean isColliding(Passenger other) {
 		boolean isColliding = false;
+		int sideOther = 2 * other.getRadius();
+		int xOther = other.getX() -  other.getRadius();
+		int yOther = other.getY() -  other.getRadius();
+		
+		int side = 2 * radius;
+		int rectX = x -radius;
+		int rectY =  y - radius;
+		
 		
 		return isColliding;
 	}
