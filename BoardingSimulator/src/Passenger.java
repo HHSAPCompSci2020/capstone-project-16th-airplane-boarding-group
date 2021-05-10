@@ -29,13 +29,26 @@ public class Passenger {
 	
 	private void walk(int seatX, int seatY) 
 	{
-		x+=10;
+		if(seatX> x) {
+			x = x + speed;
+		}
+		
+		if(seatX == x) {
+			if(seatY > y) {
+				y = y + speed;
+			}
+			else if(seatY < y) {
+				y = y - speed;
+			}
+			else {
+				isSeated = true;
+			}
+		}
 		
 	}
-	public void act(int seatX, int seatY) {
-		while(!isSeated) {
-			walk(seatX, seatY);
-		}
+	public void act(int seatX, int seatY, Passenger other) {
+		if(!isColliding(other))
+			walk(seatX,  seatY);
 
 	}
 	
@@ -44,6 +57,19 @@ public class Passenger {
 		
 	}
 	
+	private boolean isColliding(Passenger other) {
+		boolean isColliding = false;
+		
+		return isColliding;
+	}
 	
-	
+	public int getRadius() {
+		return radius;
+	}
+	public int getX() {
+		return x;
+	}
+	public int getY() {
+		return y;
+	}
 }

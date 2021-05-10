@@ -1,10 +1,12 @@
 import processing.core.PApplet;
+import javax.swing.JPanel;
 public class DrawingSurface extends PApplet 
 {
 	boolean playbuttonPressed=false;
 	boolean createBoardingPressed=false;
 	boolean presetsPressed=false;
 	boolean queueButtonPressed = false;
+	boolean windowDropDown = false;
 
 	int playX=10,buttonY=10;
 	
@@ -37,11 +39,19 @@ public class DrawingSurface extends PApplet
 			fill(200);
 		}
 		rect(queueX, buttonY, width, width/2); // queue button
+		
 		fill(0);
 		textSize(20);
 		text("Play", 35,40);
 		textSize(20);
 		text("Create Queue", 110, 40);
+		
+		fill(255);
+		
+		if(windowDropDown) {
+			rect(queueX, buttonY, 400, 400);
+		}
+		
 
 		boeing747.draw(this);
 		
@@ -56,6 +66,7 @@ public class DrawingSurface extends PApplet
 		if(mouseX > queueX && mouseX < (queueX + width) && mouseY > buttonY && mouseY < buttonY + (width/2))
 		{
 			queueButtonPressed=true;
+			windowDropDown = true;
 		}
 
 	}
@@ -67,6 +78,7 @@ public class DrawingSurface extends PApplet
 		}
 		if(queueButtonPressed) {
 			queueButtonPressed = false;
+			
 		}
 	}
 }
