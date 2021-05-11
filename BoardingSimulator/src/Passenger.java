@@ -54,6 +54,10 @@ public class Passenger {
 	
 	
 	private void locateSeat() {
+		if(isSeated==false) {
+			this.walk(seatLocationX,seatLocationY);
+			isSeated = true;
+		}
 		
 	}
 	
