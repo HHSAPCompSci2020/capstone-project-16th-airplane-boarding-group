@@ -38,7 +38,7 @@ public class DrawingSurface extends PApplet
 		else {
 			fill(200);
 		}
-		rect(queueX, buttonY, width, width/2); // queue button
+		rect(queueX, buttonY, width*2, width/2); // queue button
 		
 		fill(0);
 		textSize(20);
@@ -49,9 +49,15 @@ public class DrawingSurface extends PApplet
 		fill(255);
 		
 		if(windowDropDown) {
-			rect(queueX, buttonY, 400, 400);
+			rect(queueX, buttonY, 400, 100);
+			fill(0);
+			textSize(20);
+			text("Order 1", 110, 40);
+			textSize(20);
+			text("Order 2", 110, 60);
+			textSize(20);
+			text("Back", 110, 80);
 		}
-		
 
 		boeing747.draw(this);
 		
