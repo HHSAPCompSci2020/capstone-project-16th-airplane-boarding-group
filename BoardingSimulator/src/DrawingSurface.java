@@ -6,7 +6,6 @@ public class DrawingSurface extends PApplet
 	boolean createBoardingPressed=false;
 	boolean presetsPressed=false;
 	boolean queueButtonPressed = false;
-	boolean windowDropDown = false;
 
 	int playX=10,buttonY=10;
 	
@@ -38,26 +37,12 @@ public class DrawingSurface extends PApplet
 		else {
 			fill(200);
 		}
-		rect(queueX, buttonY, width*2, width/2); // queue button
-		
+		rect(queueX, buttonY, width, width/2); // queue button
 		fill(0);
 		textSize(20);
 		text("Play", 35,40);
 		textSize(20);
 		text("Create Queue", 110, 40);
-		
-		fill(255);
-		
-		if(windowDropDown) {
-			rect(queueX, buttonY, 400, 100);
-			fill(0);
-			textSize(20);
-			text("Order 1", 110, 40);
-			textSize(20);
-			text("Order 2", 110, 60);
-			textSize(20);
-			text("Back", 110, 80);
-		}
 
 		boeing747.draw(this);
 		
@@ -72,7 +57,6 @@ public class DrawingSurface extends PApplet
 		if(mouseX > queueX && mouseX < (queueX + width) && mouseY > buttonY && mouseY < buttonY + (width/2))
 		{
 			queueButtonPressed=true;
-			windowDropDown = true;
 		}
 
 	}
