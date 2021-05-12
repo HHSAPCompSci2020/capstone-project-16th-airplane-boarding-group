@@ -15,7 +15,7 @@ public class Screen {
 	public void draw() {
 	}
 	
-	public void mousePressed() {
+	public void mousePressed(int mouseX, int mouseY) {
 		
 	}
 	

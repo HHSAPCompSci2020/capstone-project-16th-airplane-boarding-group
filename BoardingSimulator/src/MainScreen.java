@@ -9,7 +9,7 @@ public class MainScreen extends Screen{
 	Aircraft boeing747;
 	boolean makeBoardingGroupPressed;
 	
-	public MainScreen(int width, int height, DrawingSurface marker) {
+	public MainScreen(DrawingSurface marker) {
 		super();
 		surface = marker;
 		boeing747 = new Aircraft();
