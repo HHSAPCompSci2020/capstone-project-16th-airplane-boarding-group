@@ -13,7 +13,7 @@ public class Seats
 	 * @param y y location of the seat
 	 * @param sideLength the length of the seat(seat itself is a square)
 	 */
-	public Seats(float x,float y,float sideLength)
+	public Seats(float x,float y,float sideLength,boolean seatTaken)
 	{
 		this.x=x;
 		this.y=y;
@@ -42,12 +42,17 @@ public class Seats
 	 */
 	public void setBoardingGroup() {
 		
+		
 	}
 	/**
 	 * changes the value of seatTaken when the array is taken by a passenger
 	 */
 	public void setSeatTaken() {
 		
+		seatTaken=true;
+	}
+	public boolean getSeatTaken() {
+		return seatTaken;
 	}
 	
 	

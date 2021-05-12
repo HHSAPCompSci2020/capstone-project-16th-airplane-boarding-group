@@ -75,7 +75,7 @@ public class Aircraft {
 				float widthSeat = (float)screenSize.getHeight()/12;
 				float  rectX = x+(float)screenSize.getHeight()/3 +j* widthSeat+((float)screenSize.getHeight()/12)*j;
 				float rectY = y + i*widthSeat+((float)screenSize.getHeight()/36)*i;
-				aisle1[i][j]=new Seats(rectX,rectY,widthSeat);
+				aisle1[i][j]=new Seats(rectX,rectY,widthSeat,false);
 				
 
 				
@@ -91,7 +91,7 @@ public class Aircraft {
 				float widthSeat = (float)screenSize.getHeight()/12;
 				float  rectX = x+(float)screenSize.getHeight()/3 +j* widthSeat+((float)screenSize.getHeight()/12)*j;
 				float rectY = (float)(screenSize.getHeight()*(41.0/72)) + i*widthSeat+((float)screenSize.getHeight()/36)*i;
-				aisle2[i][j]=new Seats(rectX,rectY,widthSeat);
+				aisle2[i][j]=new Seats(rectX,rectY,widthSeat,false);
 				
 
 				
