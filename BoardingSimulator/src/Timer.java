@@ -24,6 +24,7 @@ public class Timer {
 		this.screenHeight=screenHeight;
 		this.start=start;
 		this.total=total;
+		this.isRunning = false;
 	}
 	
 	public void draw(PApplet marker) {
