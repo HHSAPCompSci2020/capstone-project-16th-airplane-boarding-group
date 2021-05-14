@@ -6,6 +6,7 @@ public class QueueScreen extends Screen{
 	
 	
 	boolean playScreenButtonPressed;
+	
 	boolean backButton;
 	
 	public QueueScreen(DrawingSurface marker) {
