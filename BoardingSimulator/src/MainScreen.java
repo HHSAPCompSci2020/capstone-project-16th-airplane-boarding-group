@@ -6,7 +6,7 @@ public class MainScreen extends Screen{
 	// screen no 0
 	
 	Aircraft boeing747;
-	boolean makeBoardingGroupPressed;
+	private boolean createQueueButtonPressed;
 	
 	public MainScreen(DrawingSurface marker) {
 		super(marker);
@@ -16,24 +16,30 @@ public class MainScreen extends Screen{
 	
 	public void draw() {
 		boeing747.draw(surface);
-		surface.fill(0);
-		surface.text("create barding groups", 40, 40);
-		if(makeBoardingGroupPressed)
+		if(createQueueButtonPressed)
 			surface.fill(255, 0, 0);
 		else
 			surface.fill(255);
-		surface.rect(40, 40, 200, 100);
+		surface.rect(40, 40, 25, 50);
+		surface.fill(0);
+		surface.text("create boarding groups", 40, 40);
 		
 	}
 	
 	public void mousePressed(int mouseX, int mouseY) {
-		makeBoardingGroupPressed = true;
+		if(mouseX > 40 && mouseX > 90 && mouseY > 40 && mouseY < 65 ) {
+			createQueueButtonPressed = true;
+		}
 	}
 	
 	public int mouseReleased() {
-		if(makeBoardingGroupPressed)
-			makeBoardingGroupPressed = false;
-		return 1;
+		int index = 0;
+		
+		if(createQueueButtonPressed) {
+			createQueueButtonPressed = false;
+			index = 1;
+		}
+		return index;
 	}
 
 }

@@ -6,9 +6,8 @@ import javax.swing.JPanel;
 public class DrawingSurface extends PApplet {
 	
 	private MainScreen screen1;
-	private CreateBoardingGroupScreen screen2;
-	private QueueScreen screen3;
-	private Play screen4;
+	private QueueScreen screen2;
+	private Play screen3;
 	
 	private Screen activeScreen;
 	ArrayList<Screen> screens = new ArrayList<Screen>();
@@ -17,14 +16,11 @@ public class DrawingSurface extends PApplet {
 		screen1 = new MainScreen(this);
 		screens.add(screen1);
 		
-		screen2 = new CreateBoardingGroupScreen(this);
+		screen2 = new QueueScreen(this);
 		screens.add(screen2);
 		
-		screen3 = new QueueScreen(this);
+		screen3 = new Play(this);
 		screens.add(screen3);
-		
-		screen4 = new Play(this);
-		screens.add(screen4);
 		
 		activeScreen = screens.get(0);
 	}
