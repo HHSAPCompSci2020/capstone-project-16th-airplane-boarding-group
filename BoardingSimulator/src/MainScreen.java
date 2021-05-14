@@ -12,7 +12,8 @@ public class MainScreen extends Screen{
 	
 	Aircraft boeing747;
 	
-	public Color[] boardingGroups;
+	private Color[] boardingGroups;
+	
 	
 	private boolean createQueueButtonPressed;
 	private boolean createBoardingGroup;
@@ -62,6 +63,10 @@ public class MainScreen extends Screen{
 			index = 1;
 		}
 		return index;
+	}
+	
+	public Color[] getBoardingGroup() {
+		return boardingGroups;
 	}
 
 }
