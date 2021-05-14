@@ -15,6 +15,8 @@ public class QueueScreen extends Screen{
 	
 	public void draw() {
 		
+		surface.rect(40, 40, 100, 50);
+		surface.rect(150, 40, 100, 50);
 	}
 	
 	public void mousePressed(int mouseX, int mouseY) {
