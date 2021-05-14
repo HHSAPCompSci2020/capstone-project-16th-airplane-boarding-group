@@ -1,3 +1,4 @@
+import java.awt.Color;
 
 public class Screen {
 	
@@ -30,8 +31,7 @@ public class Screen {
 	public int mouseReleased() {
 		return 0;
 	}
-	
-	
+
 	
 
 }
