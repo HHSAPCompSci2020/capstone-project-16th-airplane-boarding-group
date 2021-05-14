@@ -1,4 +1,8 @@
 import processing.core.PApplet;
+import java.awt.Color;
+import java.util.ArrayList;
+import java.awt.Graphics;
+import javax.swing.JFrame;
 
 public class MainScreen extends Screen{
 	
@@ -11,6 +15,8 @@ public class MainScreen extends Screen{
 	int queueY = 40;
 	int queueLength = 100;
 	int queueHeight = 50;
+	
+
 	
 	public MainScreen(DrawingSurface marker) {
 		super(marker);
@@ -29,7 +35,11 @@ public class MainScreen extends Screen{
 		surface.text("create queue", 40, 40);
 		
 	}
-	
+	/**
+	 * @param x mouse X click
+	 * @param y mouse Y click
+	 * checks which part of the screen is clicked, mainly for assigning seats to the class
+	 */
 	public void mousePressed(int mouseX, int mouseY) {
 		if(mouseX > queueX && mouseX < (queueLength + queueX) && mouseY > queueY && mouseY < (queueY + queueHeight)) {
 			createQueueButtonPressed = true;

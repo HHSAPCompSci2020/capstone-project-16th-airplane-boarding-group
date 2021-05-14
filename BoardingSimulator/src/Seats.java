@@ -21,6 +21,7 @@ public class Seats
 		seatTaken=false;
 		BoardingColor=Color.WHITE;
 		
+		
 	}
 	/**
 	 * Draws the seat to the given Processing PApplet
@@ -35,7 +36,7 @@ public class Seats
 	/**
 	 * when clicked on the boarding group menu, the value of boarding group color is updated accordingly to the user input
 	 */
-	public void setBoardingGroup() {
+	public void setBoardingColor() {
 		
 		
 	}
@@ -69,6 +70,7 @@ public class Seats
 		else
 			return false;
 	}
+	
 	
 	
 }
