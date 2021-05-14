@@ -8,6 +8,7 @@ public class DrawingSurface extends PApplet {
 	private MainScreen screen1;
 	private CreateBoardingGroupScreen screen2;
 	private QueueScreen screen3;
+	private Play screen4;
 	
 	private Screen activeScreen;
 	ArrayList<Screen> screens = new ArrayList<Screen>();
@@ -21,6 +22,9 @@ public class DrawingSurface extends PApplet {
 		
 		screen3 = new QueueScreen(this);
 		screens.add(screen3);
+		
+		screen4 = new Play(this);
+		screens.add(screen4);
 		
 		activeScreen = screens.get(0);
 	}
