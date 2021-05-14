@@ -1,74 +1,44 @@
 import processing.core.PApplet;
+
+import java.util.ArrayList;
+
 import javax.swing.JPanel;
-public class DrawingSurface extends PApplet 
-{
-	boolean playbuttonPressed=false;
-	boolean createBoardingPressed=false;
-	boolean presetsPressed=false;
-	boolean queueButtonPressed = false;
-
-	int playX=10,buttonY=10;
+public class DrawingSurface extends PApplet {
 	
-	int queueX = 100;
+	private MainScreen screen1;
+	private CreateBoardingGroupScreen screen2;
+	private QueueScreen screen3;
 	
-	//int createBoardingGroupX,createBoardingGroupY;
-	//int presetsX,presetsY;
-	//int queueX,queueY;
-	int width=80;
-	Aircraft boeing747 = new Aircraft();
-	public void draw()
-	{
-		background(255,255,255);
-		if(playbuttonPressed)
-		{
-			fill(225,0,0);
-		}
+	private Screen activeScreen;
+	ArrayList<Screen> screens = new ArrayList<Screen>();
+	
+	public DrawingSurface() {
+		screen1 = new MainScreen(this);
+		screens.add(screen1);
 		
-		else {
-			fill(200);
-		}
-		rect(playX,buttonY,width,width/2); // play button
+		screen2 = new CreateBoardingGroupScreen(this);
+		screens.add(screen2);
 		
-		if(queueButtonPressed)
-		{
-			fill(225,0,0);
-		}
+		screen3 = new QueueScreen(this);
+		screens.add(screen3);
 		
-		else {
-			fill(200);
-		}
-		rect(queueX, buttonY, width, width/2); // queue button
-		fill(0);
-		textSize(20);
-		text("Play", 35,40);
-		textSize(20);
-		text("Create Queue", 110, 40);
-
-		boeing747.draw(this);
+		activeScreen = screens.get(0);
+	}
+	
+	public void draw() {
+		background(255);
+		activeScreen.draw();
 		
 	}
-	public void mousePressed()
-	{
-		if(mouseX > playX && mouseX < (playX + width) && mouseY > buttonY && mouseY < buttonY + (width/2))
-		{
-			playbuttonPressed=true;
-		}
+	
+	public void mousePressed() {
+		activeScreen.mousePressed(mouseX, mouseY);
 		
-		if(mouseX > queueX && mouseX < (queueX + width) && mouseY > buttonY && mouseY < buttonY + (width/2))
-		{
-			queueButtonPressed=true;
-		}
-
 	}
-	public void mouseReleased()
-	{
-		if(playbuttonPressed)
-		{
-			playbuttonPressed=false;
-		}
-		if(queueButtonPressed) {
-			queueButtonPressed = false;
-			
-		}
+	
+	public void mouseReleased() {
+		int index = activeScreen.mouseReleased();
+		activeScreen = screens.get(index);
 	}
+	
 }
