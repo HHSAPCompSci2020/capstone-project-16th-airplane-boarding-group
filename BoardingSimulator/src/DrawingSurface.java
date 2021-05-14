@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 public class DrawingSurface extends PApplet {
 	
-	private MainScreen screen1;
-	private QueueScreen screen2;
-	private Play screen3;
+	private MainScreen screen1; // 0
+	private QueueScreen screen2; // 1
+	private Play screen3;// 2
 	
 	private Screen activeScreen;
 	ArrayList<Screen> screens = new ArrayList<Screen>();

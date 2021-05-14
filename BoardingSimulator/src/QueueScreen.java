@@ -1,11 +1,12 @@
 
 public class QueueScreen extends Screen{
 	
-	//screen no 2
+	//screen no 1
 	
 	
 	
-	boolean playScreenBUttonPressed;
+	boolean playScreenButtonPressed;
+	boolean backButton;
 	
 	public QueueScreen(DrawingSurface marker) {
 		super(marker);
@@ -20,7 +21,16 @@ public class QueueScreen extends Screen{
 	}
 	
 	public int mouseRelased() {
-		return 0;
+		int index = 1;
+		if(playScreenButtonPressed) {
+			playScreenButtonPressed = false;
+			index = 2;
+		}
+		if(backButton) {
+			backButton = false;
+			index = 0;
+		}
+		return index;
 	}
 
 }
