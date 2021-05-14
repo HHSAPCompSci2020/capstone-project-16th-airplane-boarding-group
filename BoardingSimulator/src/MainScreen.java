@@ -6,6 +6,7 @@ public class MainScreen extends Screen{
 	
 	Aircraft boeing747;
 	private boolean createQueueButtonPressed;
+	private boolean createBoardingGroup;
 	int queueX = 40;
 	int queueY = 40;
 	int queueLength = 100;
