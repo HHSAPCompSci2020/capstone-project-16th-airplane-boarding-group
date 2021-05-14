@@ -13,7 +13,7 @@ public class MainScreen extends Screen{
 	Aircraft boeing747;
 
 
-	private Color[] boardingGroups;
+
 
 	
 
