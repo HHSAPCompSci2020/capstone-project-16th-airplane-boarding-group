@@ -98,6 +98,12 @@ public class Aircraft {
 			}
 		}
 	}
+	/**
+	 * 
+	 * @param mouseX
+	 * @param mouseY
+	 * passes the method to the specific method of seat through arrays
+	 */
 	public void seatClick(int mouseX,int mouseY)
 	{
 		for(int i=0;i<aisle1.length;i++) {
@@ -105,7 +111,7 @@ public class Aircraft {
 			{
 				if(aisle1[i][j].seatClicked(mouseX,mouseY))
 				{
-					
+					aisle1[i][j].setBoardingColor();
 				}
 				
 			}
@@ -115,7 +121,7 @@ public class Aircraft {
 			{
 				if(aisle2[i][j].seatClicked(mouseX,mouseY))
 				{
-					
+					aisle2[i][j].setBoardingColor();
 				}
 			}
 		}
