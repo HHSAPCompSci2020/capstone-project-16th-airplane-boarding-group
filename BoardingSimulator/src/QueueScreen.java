@@ -3,12 +3,12 @@ public class QueueScreen extends Screen{
 	
 	//screen no 2
 	
-	private DrawingSurface surface;
 	
-	boolean 
+	
+	boolean playScreenBUttonPressed;
 	
 	public QueueScreen(DrawingSurface marker) {
-		surface = marker;
+		super(marker);
 	}
 	
 	public void draw() {
@@ -20,7 +20,7 @@ public class QueueScreen extends Screen{
 	}
 	
 	public int mouseRelased() {
-		
+		return 0;
 	}
 
 }
