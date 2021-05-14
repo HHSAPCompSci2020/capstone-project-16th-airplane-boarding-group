@@ -97,6 +97,27 @@ public class Aircraft {
 				
 			}
 		}
-
+	}
+	public void seatClick(int mouseX,int mouseY)
+	{
+		for(int i=0;i<aisle1.length;i++) {
+			for(int j=0;j<aisle1[0].length;j++)
+			{
+				if(aisle1[i][j].seatClicked(mouseX,mouseY))
+				{
+					
+				}
+				
+			}
+		}
+		for(int i=0;i<aisle2.length;i++) {
+			for(int j=0;j<aisle2[0].length;j++)
+			{
+				if(aisle2[i][j].seatClicked(mouseX,mouseY))
+				{
+					
+				}
+			}
+		}
 	}
 }

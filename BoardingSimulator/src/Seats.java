@@ -31,12 +31,7 @@ public class Seats
 		marker.fill(BoardingColor.getRed(),BoardingColor.getBlue(),BoardingColor.getGreen());
 		marker.square(x,y,sideLength);
 	}
-	/**
-	 * when clicked on the boarding group menu, the value of boarding group name is updated accordingly to the user input
-	 */
-	public void setBoardingGroupNames() {
-		
-	}
+
 	/**
 	 * when clicked on the boarding group menu, the value of boarding group color is updated accordingly to the user input
 	 */
@@ -51,8 +46,28 @@ public class Seats
 		
 		seatTaken=true;
 	}
+	/**
+	 * 
+	 * @return seatTaken: wheter the seat is taken or not
+	 */
 	public boolean getSeatTaken() {
 		return seatTaken;
+	}
+	/**
+	 * 
+	 * @param mouseX: the x coordinate of where the mouse is clicked
+	 * @param mouseY: the y coordinate of where the mouse is clicked
+	 * @return returns true if the mouse clicked is inside the specific seat or not
+	 */
+	public boolean seatClicked(int mouseX,int mouseY)
+	{
+		if(mouseX > x&& mouseX < (sideLength + x) && mouseY > y && mouseY < (y+sideLength))
+		{
+			System.out.println("seat clicked");
+			return true;
+		}
+		else
+			return false;
 	}
 	
 	

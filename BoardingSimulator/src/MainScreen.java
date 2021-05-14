@@ -33,6 +33,9 @@ public class MainScreen extends Screen{
 		if(mouseX > queueX && mouseX < (queueLength + queueX) && mouseY > queueY && mouseY < (queueY + queueHeight)) {
 			createQueueButtonPressed = true;
 		}
+		boeing747.seatClick(mouseX,mouseY);
+		
+		
 	}
 	
 	public int mouseReleased() {
