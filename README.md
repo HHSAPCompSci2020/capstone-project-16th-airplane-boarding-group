@@ -95,7 +95,7 @@ Joshua Choi: Project Idea, README, Aircraft, Drawing Surface, Seats
 
 Vamsee Krishna Vusuwandla: README, Drawing Surface, Timer, Passanger,  UML, 
 
-Aryan Keskar: Drawing surface, GUI Interactive , Main, html documentation, UML, Seats, Passanger, Screen (+ subclasses)
+Aryan Keskar: Drawing surface, GUI Interactive , Main, html documentation, UML, Seats, Aircraft, Passanger, Screen (+ subclasses)
 
 Equal share with array algorithms and the logistics of programming a boarding system as this takes up most of the project.
 
