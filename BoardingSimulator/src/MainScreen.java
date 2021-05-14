@@ -1,3 +1,5 @@
+import java.awt.Color;
+
 import processing.core.PApplet;
 
 public class MainScreen extends Screen{
@@ -5,6 +7,9 @@ public class MainScreen extends Screen{
 	// screen no 0
 	
 	Aircraft boeing747;
+	
+	public Color[] boardingGroups;
+	
 	private boolean createQueueButtonPressed;
 	private boolean createBoardingGroup;
 	int queueX = 40;
