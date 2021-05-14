@@ -1,11 +1,11 @@
 
 public class Screen {
 	
-
+	protected DrawingSurface surface;
 	
 	
-	public Screen() {
-		
+	public Screen(DrawingSurface marker) {
+		surface = marker;
 	}
 	
 	public void setup() {

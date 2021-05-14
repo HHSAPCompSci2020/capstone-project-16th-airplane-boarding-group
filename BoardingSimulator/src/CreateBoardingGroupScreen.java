@@ -3,13 +3,12 @@ public class CreateBoardingGroupScreen extends Screen{
 	
 	// screen no 1
 	
-	private DrawingSurface surface;
+	
 	private boolean backButtonPressed;
 	private boolean createQueueButtonPressed;
 
 	public CreateBoardingGroupScreen(DrawingSurface marker) {
-		
-		surface = marker;
+		super(marker);
 		// TODO Auto-generated constructor stub
 	}
 	

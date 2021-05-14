@@ -5,13 +5,11 @@ public class MainScreen extends Screen{
 	
 	// screen no 0
 	
-	private DrawingSurface surface;
 	Aircraft boeing747;
 	boolean makeBoardingGroupPressed;
 	
 	public MainScreen(DrawingSurface marker) {
-		super();
-		surface = marker;
+		super(marker);
 		boeing747 = new Aircraft();
 		// TODO Auto-generated constructor stub
 	}
