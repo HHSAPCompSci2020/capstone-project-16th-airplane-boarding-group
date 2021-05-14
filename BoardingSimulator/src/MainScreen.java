@@ -2,7 +2,6 @@ import processing.core.PApplet;
 
 public class MainScreen extends Screen{
 	
-	
 	// screen no 0
 	
 	Aircraft boeing747;
@@ -26,12 +25,12 @@ public class MainScreen extends Screen{
 			surface.fill(255);
 		surface.rect(40, 40, 100, 50);
 		surface.fill(0);
-		surface.text("create boarding groups", 40, 40);
+		surface.text("create queue", 40, 40);
 		
 	}
 	
 	public void mousePressed(int mouseX, int mouseY) {
-		if(mouseX > queueX && mouseX > (queueLength + queueX) && mouseY > queueY && mouseY < (queueY + queueHeight)) {
+		if(mouseX > queueX && mouseX < (queueLength + queueX) && mouseY > queueY && mouseY < (queueY + queueHeight)) {
 			createQueueButtonPressed = true;
 		}
 	}
