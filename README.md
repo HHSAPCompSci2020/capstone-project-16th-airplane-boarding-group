@@ -76,20 +76,26 @@ Class List:
 *Subject to change as the project progresses
 Main - the main method of the whole program
 Drawing Surface- responsible for GUI, interactive inputs with the user
-Board - The methods used to board the passengers into the plane
-Menu - The listed options of starting the simulation to choosing the boarding pattern
-Lining Group - The setup of before the seating phase, where boarding and line up can be altered
-Seat Layout - The setup of how the seating phase of the simulation is portrayed
+Aircraft - class represents the airplane of the class, it's responsible for drawing the seats
+Passenger - The individuals found in the boarding group
+Timer - A class designed to track the time spent in boarding the groups
+Seats - The setup of how the seating phase of the simulation is portrayed
+Screen - The superclass that acts as level states in the program
+MainScreen - The primary screen showcasing the aircraft and options able to be transversed
+CreateBoardingGroupScreen - The listed options of starting the simulation to choosing the boarding pattern
+QueueScreen - The set up screen for the options listed
+Play - The level state of actual simulation for the program
+
 
 Credits:
 [Gives credit for project components. This includes both internal credit (your group members) and external credit (other people, websites, libraries). To do this:
 List the group members and describe how each member contributed to the completion of the final program. This could be classes written, art assets created, leadership/organizational skills exercises, or other tasks. Initially, this is how you plan on splitting the work.
 
-Joshua Choi: Project Idea,README, Lining Group, Seat Layout
+Joshua Choi: Project Idea, README, Aircraft, Drawing Surface, Seats, Main 
 
-Vamsee Krishna Vusuwandla: README,Drawing surface , UML, Graphics art
+Vamsee Krishna Vusuwandla: README, Drawing Surface, Timer, Passanger,  UML, 
 
-Aryan Keskar: Drawing surface, GUI Interactive ,Main, html documentation
+Aryan Keskar: Drawing surface, GUI Interactive, html documentation, UML, Seats, Aircraft, Passanger, Screen (+ subclasses)
 
 Equal share with array algorithms and the logistics of programming a boarding system as this takes up most of the project.
 
