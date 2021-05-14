@@ -77,7 +77,7 @@ Class List:
 Main - the main method of the whole program
 Drawing Surface- responsible for GUI, interactive inputs with the user
 Aircraft - class represents the airplane of the class, it's responsible for drawing the seats
-Passengers - The individuals found in the boarding group
+Passenger - The individuals found in the boarding group
 Timer - A class designed to track the time spent in boarding the groups
 Seats - The setup of how the seating phase of the simulation is portrayed
 Screen - The superclass that acts as level states in the program
@@ -91,11 +91,11 @@ Credits:
 [Gives credit for project components. This includes both internal credit (your group members) and external credit (other people, websites, libraries). To do this:
 List the group members and describe how each member contributed to the completion of the final program. This could be classes written, art assets created, leadership/organizational skills exercises, or other tasks. Initially, this is how you plan on splitting the work.
 
-Joshua Choi: Project Idea, README, Aircraft, Drawing Surface, Seats,
+Joshua Choi: Project Idea, README, Aircraft, Drawing Surface, Seats 
 
-Vamsee Krishna Vusuwandla: README, Drawing Surface, Timer, Passangers,  UML, Graphics art
+Vamsee Krishna Vusuwandla: README, Drawing Surface, Timer, Passanger,  UML, 
 
-Aryan Keskar: Drawing surface, GUI Interactive , Main, html documentation, UML, Aircraft, Passangers,  Screen (+ subclasses)
+Aryan Keskar: Drawing surface, GUI Interactive , Main, html documentation, UML, Seats, Passanger, Screen (+ subclasses)
 
 Equal share with array algorithms and the logistics of programming a boarding system as this takes up most of the project.
 
