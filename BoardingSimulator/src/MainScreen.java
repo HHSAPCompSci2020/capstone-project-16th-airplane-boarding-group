@@ -16,7 +16,10 @@ public class MainScreen extends Screen{
 	private Color[] boardingGroups;
 
 	
+
+	private Color[] boardingGroups;
 	
+
 	private boolean createQueueButtonPressed;
 	private boolean createBoardingGroupPressed;
 	int queueX = 40;
@@ -81,6 +84,10 @@ public class MainScreen extends Screen{
 		}
 		return index;
 	}
+	
+	public Color[] getBoardingGroup() {
+		return boardingGroups;
+	}
 
 	public void setBoardingColors()
 	{
@@ -93,12 +100,9 @@ public class MainScreen extends Screen{
 		boardingGroups[5]= Color.YELLOW;
 		boardingGroups[6]= Color.DARK_GRAY;
 		
-		
+	}
 		
 
-	
-	public Color[] getBoardingGroup() {
-		return boardingGroups;
-	}
+
 
 }
