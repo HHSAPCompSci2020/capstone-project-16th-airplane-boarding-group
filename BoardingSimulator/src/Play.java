@@ -8,5 +8,9 @@ public class Play  extends Screen{
 		super(marker);
 		// TODO Auto-generated constructor stub
 	}
+	
+	public void draw() {
+		timer.draw(surface);
+	}
 
 }
