@@ -22,14 +22,14 @@ public class Timer {
 		this.height=height;
 		this.screenWidth=screenWidth;
 		this.screenHeight=screenHeight;
-		this.seconds=seconds;
-		minutes = (int) (seconds/60);
+		this.start=start;
+		this.total=total;
 	}
 	
 	public void draw(PApplet marker) {
 		marker.fill(0);
 		marker.textSize(20);
-		marker.text(minutes + ":" + seconds, 35,40);
+		marker.text(start + ":" + total, 35,40);
 		marker.rect(x, y, screenWidth, screenHeight);
 	}
 	public Timer()
