@@ -148,7 +148,7 @@ Joshua Choi: Project Idea,README, Lining Group, Seat Layout
 Vamsee Krishna Vusuwandla: README,Drawing surface , UML, Graphics art
 
 
-Aryan Keskar: Drawing surface, GUI Interactive ,Main, html documentation, UML
+Aryan Keskar: Drawing surface, GUI Interactive ,Main, html documentation, UML, Aircraft
 
 
 Equal share with array algorithms and the logistics of programming a boarding system as this takes up most of the project.
