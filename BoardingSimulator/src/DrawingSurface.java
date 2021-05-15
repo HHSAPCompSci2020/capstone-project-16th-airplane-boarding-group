@@ -51,6 +51,7 @@ public class DrawingSurface extends PApplet {
 		activeScreen = screens.get(index);
 		if(activeScreen instanceof QueueScreen && colors != null)
 			((QueueScreen) activeScreen).setboardingGroup(colors);
-	}
 	
+	
+	}
 }
