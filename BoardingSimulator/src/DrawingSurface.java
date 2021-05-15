@@ -39,6 +39,7 @@ public class DrawingSurface extends PApplet {
 	
 	public void mouseDragged() {
 		activeScreen.mouseDragged(mouseX, mouseY);
+		
 	}
 	
 	public void mouseReleased() {

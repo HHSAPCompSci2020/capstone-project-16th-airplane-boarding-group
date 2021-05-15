@@ -48,9 +48,13 @@ public class QueueScreen extends Screen{
 		surface.rect(doneX, buttonY, buttonWidth, buttonHeight);
 		
 		for(int i = 0; i < initialList.length; i++) {
+	
 			surface.fill(initialList[i].getRed(), initialList[i].getGreen(), initialList[i].getBlue());
+	
 			int width = (int)(initialList[i].getExtent());
 			surface.rect(initialList[i].getX(), initialList[i].getY(), width, width);
+
+			surface.fill(255);
 			
 		}
 	}
@@ -98,7 +102,7 @@ public class QueueScreen extends Screen{
 			Rectangle rect = new Rectangle(positionX, positionY, width, width, 
 					boardingGroups[i].getRed(), boardingGroups[i].getGreen(), boardingGroups[i].getBlue());
 			initialList[i] = rect;
-			positionX = positionX + 20;
+			positionX = positionX + 40;
 			if(positionX >= 600) {
 				positionY = positionY + 40;
 				positionX = 40;
@@ -107,11 +111,46 @@ public class QueueScreen extends Screen{
 	}
 	
 	private void sortIntoFinal() {
+		int minIndex = 0;
+		ArrayList<Integer> indices = new ArrayList<Integer>();
+		int minValue = 20000;
+		for(int i = 0; i < initialList.length; i++) {
+			if(initialList[i].getY() < minValue && !hasElement(indices, initialList[i].getY())) {
+				minValue = initialList[i].getY();
+				minIndex = i;
+				indices.add(i);
+			}
+		}
 		
+		for(int i = 0; i < indices.size(); i ++) {
+			finalList[i] = new Color(initialList[indices.get(i)].getRed(), 
+					initialList[indices.get(i)].getGreen(), initialList[indices.get(i)].getBlue());
+		}
+	}
+	
+	private boolean hasElement(ArrayList<Integer> indices, int num) {
+		boolean hasElement = false;
+		for(int i = 0; i < indices.size(); i++) {
+			if(indices.get(i) == num) {
+				hasElement = true;
+			}
+		}
+		return hasElement;
 	}
 	
 	public void mouseDragged(int mouseX, int mouseY) {
+		for(int i = 0; i < initialList.length; i ++) {
+			int positionX = initialList[i].getX();
+			int positionY = initialList[i].getY();
+			int width = (int)(initialList[i].getExtent());
+			if(mouseX > positionX && mouseX < (width + positionX)&& mouseY > positionY && mouseY < (width + positionY)) {
 		
+				initialList[i].setX(mouseX - width/2);
+				initialList[i].setY(mouseY - width/2);
+				// && mouseY > positionY && mouseY < (width + positionY)
+			}
+		}
+		//System.out.println(initialList.length);
 	}
 	
 	public Color[] getFinalList() {
