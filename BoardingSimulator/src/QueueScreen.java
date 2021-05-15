@@ -5,7 +5,7 @@ import akeskar099.shapes.Rectangle;
 public class QueueScreen extends Screen{
 	
 	//screen no 1
-	private int buttonY  = 40;
+	private int buttonY  = 20;
 	private int backX = 40;
 	private int playX = 150;
 	private int doneX = 260;
@@ -17,11 +17,11 @@ public class QueueScreen extends Screen{
 	private boolean donePressed;
 	
 	private Color[] boardingGroups;
-	private ArrayList<Rectangle> initialList;
+	private Rectangle[] initialList;
+	private Color[] finalList;
 	
 	public QueueScreen(DrawingSurface marker) {
 		super(marker);
-		initialList = new ArrayList<Rectangle>();
 		playScreenButtonPressed = false;
 		backButton = false;
 		
@@ -41,10 +41,16 @@ public class QueueScreen extends Screen{
 			surface.fill(255);
 		surface.rect(playX, buttonY, buttonWidth, buttonHeight);
 		
-		for(int i = 0; i < initialList.size(); i++) {
-			surface.fill(initialList.get(i).getRed(), initialList.get(i).getGreen(), initialList.get(i).getBlue());
-			int width = (int)(initialList.get(i).getExtent());
-			surface.rect(initialList.get(i).getX(), initialList.get(i).getY(), width, width);
+		if(donePressed)
+			surface.fill(255,0,0);
+		else 
+			surface.fill(255);
+		surface.rect(doneX, buttonY, buttonWidth, buttonHeight);
+		
+		for(int i = 0; i < initialList.length; i++) {
+			surface.fill(initialList[i].getRed(), initialList[i].getGreen(), initialList[i].getBlue());
+			int width = (int)(initialList[i].getExtent());
+			surface.rect(initialList[i].getX(), initialList[i].getY(), width, width);
 			
 		}
 	}
@@ -54,24 +60,31 @@ public class QueueScreen extends Screen{
 			backButton = true;
 		if(mouseX > playX && mouseX < (playX+buttonWidth) && mouseY > buttonY && mouseY < (buttonY + buttonHeight))
 			playScreenButtonPressed = true;
+		if(mouseX > doneX && mouseX < (doneX+buttonWidth) && mouseY > buttonY && mouseY < (buttonY + buttonHeight))
+			donePressed = true;
 	}
 	
 	public int mouseReleased() {
 		int index = 1;
-		if(playScreenButtonPressed) {
+		if(playScreenButtonPressed && donePressed) {
+			sortIntoFinal();
 			playScreenButtonPressed = false;
+			donePressed = false;
 			index = 2;
 		}
 		if(backButton) {
 			backButton = false;
 			index = 0;
 		}
+
 		return index;
 	}
 	
 	public void setboardingGroup(Color[] colors) {
 		boardingGroups = colors;
+		initialList = new Rectangle[boardingGroups.length];
 		fillInitialList();
+		finalList = new Color[boardingGroups.length];
 		for(int i = 0; i < boardingGroups.length; i ++) {
 			System.out.println(boardingGroups[i].getRed());
 		}
@@ -84,13 +97,25 @@ public class QueueScreen extends Screen{
 		for(int i = 0; i < boardingGroups.length; i ++) {
 			Rectangle rect = new Rectangle(positionX, positionY, width, width, 
 					boardingGroups[i].getRed(), boardingGroups[i].getGreen(), boardingGroups[i].getBlue());
-			initialList.add(rect);
+			initialList[i] = rect;
 			positionX = positionX + 20;
 			if(positionX >= 600) {
 				positionY = positionY + 40;
 				positionX = 40;
 			}
 		}
+	}
+	
+	private void sortIntoFinal() {
+		
+	}
+	
+	public void mouseDragged(int mouseX, int mouseY) {
+		
+	}
+	
+	public Color[] getFinalList() {
+		return finalList;
 	}
 	
 }

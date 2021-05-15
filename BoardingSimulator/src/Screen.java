@@ -24,7 +24,7 @@ public class Screen {
 		
 	}
 	
-	public void mouseDragged() {
+	public void mouseDragged(int mouseX, int mouseY) {
 		
 	}
 	

@@ -37,6 +37,10 @@ public class DrawingSurface extends PApplet {
 		
 	}
 	
+	public void mouseDragged() {
+		activeScreen.mouseDragged(mouseX, mouseY);
+	}
+	
 	public void mouseReleased() {
 		Color[] colors = null;
 		int index = activeScreen.mouseReleased();
@@ -44,14 +48,18 @@ public class DrawingSurface extends PApplet {
 		if(activeScreen instanceof MainScreen && index  == 1) {
 			colors = ((MainScreen)activeScreen).getBoardingGroup();
 			if(colors == null) {
-				System.out.println("hello");
+				index--;
+			}
+		}
+		if(activeScreen instanceof QueueScreen && index == 2) {
+			colors = ((QueueScreen)activeScreen).getFinalList();
+			if(colors == null) {
 				index--;
 			}
 		}
 		activeScreen = screens.get(index);
 		if(activeScreen instanceof QueueScreen && colors != null)
 			((QueueScreen) activeScreen).setboardingGroup(colors);
-	
 	
 	}
 }
