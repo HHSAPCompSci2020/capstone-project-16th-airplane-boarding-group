@@ -29,7 +29,7 @@ public class Seats
 	 */
 	public void draw(PApplet marker)
 	{
-		marker.fill(BoardingColor.getRed(),BoardingColor.getBlue(),BoardingColor.getGreen());
+		marker.fill(BoardingColor.getRed(),BoardingColor.getGreen(),BoardingColor.getBlue());
 		marker.square(x,y,sideLength);
 	}
 
