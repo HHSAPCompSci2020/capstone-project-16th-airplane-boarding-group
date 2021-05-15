@@ -3,6 +3,7 @@ import java.awt.Color;
 import processing.core.PApplet;
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.awt.Graphics;
 import javax.swing.JFrame;
 
@@ -37,6 +38,7 @@ public class MainScreen extends Screen{
 		surface.rect(400,40,100,50);
 		surface.fill(0);
 		surface.text("click here to every time you want to make each boarding group, the first group is already set for red",350,40);
+		surface.text("you simply have to click individual seats to assign them to a boarding group",400,30);
 		surface.fill(0);
 		surface.text("current boarding group:",200,40);
 		surface.fill(boardingGroups[i].getRed(),boardingGroups[i].getGreen(),boardingGroups[i].getBlue());
@@ -92,7 +94,8 @@ public class MainScreen extends Screen{
 	}
 	
 	public Color[] getBoardingGroup() {
-		return boardingGroups;
+		Color [] trimmedGroups =Arrays.copyOfRange(boardingGroups,0,i);
+		return trimmedGroups;
 	}
 
 	public void setBoardingColors()
