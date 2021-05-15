@@ -44,6 +44,7 @@ public class DrawingSurface extends PApplet {
 		if(activeScreen instanceof MainScreen && index  == 1) {
 			colors = ((MainScreen)activeScreen).getBoardingGroup();
 			if(colors == null) {
+				System.out.println("hello");
 				index--;
 			}
 		}
