@@ -12,11 +12,6 @@ public class MainScreen extends Screen{
 	
 	Aircraft boeing747;
 
-
-
-
-	
-
 	private Color[] boardingGroups;
 	
 
@@ -91,7 +86,7 @@ public class MainScreen extends Screen{
 
 	public void setBoardingColors()
 	{
-		boardingGroups = new Color[5];
+		boardingGroups = new Color[6];
 		boardingGroups[0]= Color.RED;
 		boardingGroups[1]= Color.GREEN;
 		boardingGroups[2]= Color.BLUE;
