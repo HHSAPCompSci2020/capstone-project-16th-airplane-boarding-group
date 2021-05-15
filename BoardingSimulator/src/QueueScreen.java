@@ -1,5 +1,8 @@
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import akeskar099.shapes.Rectangle;
 
 public class QueueScreen extends Screen{
@@ -111,32 +114,26 @@ public class QueueScreen extends Screen{
 	}
 	
 	private void sortIntoFinal() {
-		int minIndex = 0;
-		ArrayList<Integer> indices = new ArrayList<Integer>();
-		int minValue = 20000;
+		
+		ArrayList<Integer> ofYValues = new ArrayList<Integer>();
+		int[] indices = new int[initialList.length];
 		for(int i = 0; i < initialList.length; i++) {
-			if(initialList[i].getY() < minValue && !hasElement(indices, initialList[i].getY())) {
-				minValue = initialList[i].getY();
-				minIndex = i;
-				indices.add(i);
+			ofYValues.add(initialList[i].getY());
+		}
+		Collections.sort(ofYValues);
+		for(int i = 0; i < initialList.length; i++) {
+			for(int n = 0; n < ofYValues.size(); n++) {
+				if(ofYValues.get(n) == initialList[i].getY())
+					indices[i] = initialList[i].getY();
 			}
+		}
+		for(int i = 0; i < finalList.length; i++) {
+			finalList[i] = new Color(initialList[indices[i]].getRed(), 
+					initialList[indices[i]].getGreen(), initialList[indices[i]].getBlue());
 		}
 		
-		for(int i = 0; i < indices.size(); i ++) {
-			finalList[i] = new Color(initialList[indices.get(i)].getRed(), 
-					initialList[indices.get(i)].getGreen(), initialList[indices.get(i)].getBlue());
-		}
 	}
 	
-	private boolean hasElement(ArrayList<Integer> indices, int num) {
-		boolean hasElement = false;
-		for(int i = 0; i < indices.size(); i++) {
-			if(indices.get(i) == num) {
-				hasElement = true;
-			}
-		}
-		return hasElement;
-	}
 	
 	public void mouseDragged(int mouseX, int mouseY) {
 		for(int i = 0; i < initialList.length; i ++) {
