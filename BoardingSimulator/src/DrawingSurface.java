@@ -52,7 +52,7 @@ public class DrawingSurface extends PApplet {
 				index--;
 			}
 		}
-		if(activeScreen instanceof QueueScreen && index == 2) {
+		else if(activeScreen instanceof QueueScreen && index == 2) {
 			colors = ((QueueScreen)activeScreen).getFinalList();
 			if(colors == null) {
 				index--;
@@ -61,6 +61,8 @@ public class DrawingSurface extends PApplet {
 		activeScreen = screens.get(index);
 		if(activeScreen instanceof QueueScreen && colors != null)
 			((QueueScreen) activeScreen).setboardingGroup(colors);
+		else if(activeScreen instanceof Play && colors!= null)
+			((Play)activeScreen).setBoardingGroup(colors);
 	
 	}
 }

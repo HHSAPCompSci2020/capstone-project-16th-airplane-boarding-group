@@ -7,6 +7,10 @@ import akeskar099.shapes.Rectangle;
 
 public class QueueScreen extends Screen{
 	
+	/**
+	@author Aryan Keskar
+	*/
+	
 	//screen no 1
 	private int buttonY  = 20;
 	private int backX = 40;
@@ -23,13 +27,20 @@ public class QueueScreen extends Screen{
 	private Rectangle[] initialList;
 	private Color[] finalList;
 	
+	/**
+	 * Constructor of QueScreen, makes a new screen with all boolean values false
+	 * @param marker
+	 */
 	public QueueScreen(DrawingSurface marker) {
 		super(marker);
+		donePressed = false;
 		playScreenButtonPressed = false;
 		backButton = false;
 		
 	}
-	
+	/**
+	 * Draws the screen with buttons and boarding groups
+	 */
 	public void draw() {
 		
 		if(backButton)
@@ -61,7 +72,12 @@ public class QueueScreen extends Screen{
 			
 		}
 	}
-	
+	/**
+	 * called when mouse is pressed sets the boolean value of the field associated with the button to true. It is called in the DrawingSurface
+	 * Class' draw method
+	 * @param mouseX: x coordinate of the mouse
+	 * @param mouseY: y coordinate of the mouse
+	 */
 	public void mousePressed(int mouseX, int mouseY) {
 		if(mouseX > backX && mouseX < (backX+buttonWidth) && mouseY > buttonY && mouseY < (buttonY + buttonHeight))
 			backButton = true;
@@ -70,10 +86,13 @@ public class QueueScreen extends Screen{
 		if(mouseX > doneX && mouseX < (doneX+buttonWidth) && mouseY > buttonY && mouseY < (buttonY + buttonHeight))
 			donePressed = true;
 	}
-	
+	/**
+	 * Called when the mouse is released sets boolean values to false and is responsible for choosing the next screen
+	 * @return int: returns the index of the next screen.
+	 */
 	public int mouseReleased() {
 		int index = 1;
-		if(playScreenButtonPressed && donePressed) {
+		if(playScreenButtonPressed || donePressed) {
 			sortIntoFinal();
 			playScreenButtonPressed = false;
 			donePressed = false;
@@ -87,6 +106,10 @@ public class QueueScreen extends Screen{
 		return index;
 	}
 	
+	/**
+	 * sets the list of boarding groups in this class equal to list of boarding groups passed
+	 * @param colors: the array of boarding groups
+	 */
 	public void setboardingGroup(Color[] colors) {
 		boardingGroups = colors;
 		initialList = new Rectangle[boardingGroups.length];
@@ -121,20 +144,25 @@ public class QueueScreen extends Screen{
 			ofYValues.add(initialList[i].getY());
 		}
 		Collections.sort(ofYValues);
-		for(int i = 0; i < initialList.length; i++) {
-			for(int n = 0; n < ofYValues.size(); n++) {
-				if(ofYValues.get(n) == initialList[i].getY())
-					indices[i] = initialList[i].getY();
+		
+		for(int i = 0; i < ofYValues.size(); i++) {
+			for(int n = 0; n < initialList.length; n++) {
+				if(ofYValues.get(i) == initialList[n].getY())
+					indices[n] = i;
 			}
 		}
-		for(int i = 0; i < finalList.length; i++) {
+		for(int i = 0; i < indices.length; i++) {
 			finalList[i] = new Color(initialList[indices[i]].getRed(), 
 					initialList[indices[i]].getGreen(), initialList[indices[i]].getBlue());
 		}
 		
 	}
 	
-	
+	/**
+	 * moves the rectangles representing the boarding groups
+	 * @param mouseX
+	 * @param mouseY
+	 */
 	public void mouseDragged(int mouseX, int mouseY) {
 		for(int i = 0; i < initialList.length; i ++) {
 			int positionX = initialList[i].getX();
@@ -149,7 +177,10 @@ public class QueueScreen extends Screen{
 		}
 		//System.out.println(initialList.length);
 	}
-	
+	/**
+	 * Returns the final boarding order
+	 * @return finalList
+	 */
 	public Color[] getFinalList() {
 		return finalList;
 	}

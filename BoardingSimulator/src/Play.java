@@ -1,3 +1,4 @@
+import java.awt.Color;
 
 public class Play  extends Screen{
 	
@@ -12,6 +13,10 @@ public class Play  extends Screen{
 	
 	public void draw() {
 		timer.draw(surface);
+	}
+	
+	public void setBoardingGroup(Color[] colors) {
+		
 	}
 
 }
