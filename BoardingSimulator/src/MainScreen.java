@@ -86,7 +86,7 @@ public class MainScreen extends Screen{
 
 	public void setBoardingColors()
 	{
-		boardingGroups = new Color[6];
+		boardingGroups = new Color[7];
 		boardingGroups[0]= Color.RED;
 		boardingGroups[1]= Color.GREEN;
 		boardingGroups[2]= Color.BLUE;
