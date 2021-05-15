@@ -25,18 +25,24 @@ public class MainScreen extends Screen{
 	int i=0;
 	
 
-	
+	/**
+	 * 
+	 * @param marker constructor creates the aircraft with the drawing surface
+	 */
 	public MainScreen(DrawingSurface marker) {
 		super(marker);
 		boeing747 = new Aircraft();
 		setBoardingColors();
 		// TODO Auto-generated constructor stub
 	}
-	
+	/**
+	 * drawing the main screen with buttons
+	 */
 	public void draw() {
 		boeing747.draw(surface);
 		surface.rect(400,40,100,50);
 		surface.fill(0);
+		surface.text("click here",430,60);
 		surface.text("click here to every time you want to make each boarding group, the first group is already set for red",350,40);
 		surface.text("you simply have to click individual seats to assign them to a boarding group",400,30);
 		surface.text("keep in mind that the maximum of groups you can use is 7, but you can use fewer to your liking",600,60);
@@ -85,7 +91,9 @@ public class MainScreen extends Screen{
 		
 		
 	}
-	
+	/**
+	 * changes boolean value depending on where the user clicks on the main screen
+	 */
 	public int mouseReleased() {
 		int index = 0;
 		if(createBoardingGroupPressed)
@@ -103,7 +111,9 @@ public class MainScreen extends Screen{
 		Color [] trimmedGroups =Arrays.copyOfRange(boardingGroups,0,i);
 		return trimmedGroups;
 	}
-
+/**
+ * sets boarding colors into some arbitrary order of colors
+ */
 	public void setBoardingColors()
 	{
 		boardingGroups = new Color[7];
