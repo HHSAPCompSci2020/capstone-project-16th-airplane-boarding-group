@@ -7,6 +7,6 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="lib/processing_core.jar"/>
-	<classpathentry kind="lib" path="lib/shapes.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Documents/GitHub/capstone-project-16th-airplane-boarding-group/BoardingSimulator/lib/shapes.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
