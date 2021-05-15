@@ -1,8 +1,6 @@
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
-
 import akeskar099.shapes.Rectangle;
 
 public class QueueScreen extends Screen{
@@ -115,9 +113,6 @@ public class QueueScreen extends Screen{
 		initialList = new Rectangle[boardingGroups.length];
 		fillInitialList();
 		finalList = new Color[boardingGroups.length];
-		for(int i = 0; i < boardingGroups.length; i ++) {
-			System.out.println(boardingGroups[i].getRed());
-		}
 	}
 	
 	private void fillInitialList() {
@@ -164,6 +159,7 @@ public class QueueScreen extends Screen{
 	 * @param mouseY
 	 */
 	public void mouseDragged(int mouseX, int mouseY) {
+		
 		for(int i = 0; i < initialList.length; i ++) {
 			int positionX = initialList[i].getX();
 			int positionY = initialList[i].getY();

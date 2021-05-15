@@ -131,6 +131,4 @@ public class MainScreen extends Screen{
 	}
 		
 
-
-
 }
