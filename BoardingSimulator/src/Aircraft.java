@@ -1,4 +1,5 @@
 import java.awt.Dimension;
+import java.awt.Color;
 /**
  * The aircraft class represents the airplane of the class, it's responsible for drawing the seats 
  * as a whole and passing on the seats to individual seats objects using 2d arrays
@@ -104,14 +105,14 @@ public class Aircraft {
 	 * @param mouseY
 	 * passes the method to the specific method of seat through arrays
 	 */
-	public void seatClick(int mouseX,int mouseY)
+	public void seatClick(int mouseX,int mouseY,Color color)
 	{
 		for(int i=0;i<aisle1.length;i++) {
 			for(int j=0;j<aisle1[0].length;j++)
 			{
 				if(aisle1[i][j].seatClicked(mouseX,mouseY))
 				{
-					aisle1[i][j].setBoardingColor();
+					aisle1[i][j].setBoardingColor(color);
 				}
 				
 			}
@@ -121,7 +122,7 @@ public class Aircraft {
 			{
 				if(aisle2[i][j].seatClicked(mouseX,mouseY))
 				{
-					aisle2[i][j].setBoardingColor();
+					aisle2[i][j].setBoardingColor(color);
 				}
 			}
 		}
