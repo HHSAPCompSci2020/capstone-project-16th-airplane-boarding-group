@@ -39,9 +39,15 @@ public class MainScreen extends Screen{
 		surface.fill(0);
 		surface.text("click here to every time you want to make each boarding group, the first group is already set for red",350,40);
 		surface.text("you simply have to click individual seats to assign them to a boarding group",400,30);
+		surface.text("keep in mind that the maximum of groups you can use is 7, but you can use fewer to your liking",600,60);
+		
 		surface.fill(0);
 		surface.text("current boarding group:",200,40);
+		if(i<boardingGroups.length)
 		surface.fill(boardingGroups[i].getRed(),boardingGroups[i].getGreen(),boardingGroups[i].getBlue());
+		else {
+			surface.text("that's all the boarding groups we have set for you",100,100+i*10);
+		}
 		surface.rect(200,50,50,50);
 		
 		
@@ -107,7 +113,7 @@ public class MainScreen extends Screen{
 		boardingGroups[3]= Color.BLACK;
 		boardingGroups[4]= Color.CYAN;
 		boardingGroups[5]= Color.YELLOW;
-		boardingGroups[6]= Color.DARK_GRAY;
+		boardingGroups[6]= Color.LIGHT_GRAY;
 		
 	}
 		
