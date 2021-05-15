@@ -14,6 +14,7 @@ public class MainScreen extends Screen{
 	Aircraft boeing747;
 
 	private Color[] boardingGroups;
+	private Color[] trim;
 	
 
 	private boolean createQueueButtonPressed;
@@ -83,7 +84,9 @@ public class MainScreen extends Screen{
 		if(mouseX > 400 && mouseX < (500) && mouseY > 40 && mouseY < (90))
 		{
 			createBoardingGroupPressed= true;
+		
 			i++;
+			
 			System.out.println("color changed");
 		}
 		if(i<boardingGroups.length)
