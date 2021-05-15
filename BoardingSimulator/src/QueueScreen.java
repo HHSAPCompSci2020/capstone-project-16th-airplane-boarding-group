@@ -34,6 +34,21 @@ public class QueueScreen extends Screen{
 			surface.fill(255);
 		surface.rect(playX, buttonY, buttonWidth, buttonHeight);
 		
+		int positionX = 40;
+		int positionY = 60;
+		for(int i = 0; i < boardingGroups.length; i++) {
+			int r = boardingGroups[i].getRed();
+			int b = boardingGroups[i].getBlue();
+			int g = boardingGroups[i].getGreen();
+			surface.fill(r, g, b);
+			surface.rect(positionX, positionY, 30,30 );
+			positionX = positionX + 20;
+			if(positionX == 200)
+				positionY = positionY + 40;
+			
+			surface.fill(255);
+		}
+		
 		
 	}
 	
@@ -63,5 +78,6 @@ public class QueueScreen extends Screen{
 			System.out.println(boardingGroups[i].getRed());
 		}
 	}
-
+	
+	
 }
