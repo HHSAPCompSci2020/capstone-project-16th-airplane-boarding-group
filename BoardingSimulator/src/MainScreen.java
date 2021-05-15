@@ -21,6 +21,7 @@ public class MainScreen extends Screen{
 	int queueY = 40;
 	int queueLength = 100;
 	int queueHeight = 50;
+	int i=0;
 	
 
 	
@@ -35,8 +36,14 @@ public class MainScreen extends Screen{
 		boeing747.draw(surface);
 		surface.rect(400,40,100,50);
 		surface.fill(0);
-		surface.text("click here to make the next boarding group",400,40);
-
+		surface.text("click here to every time you want to make each boarding group, the first group is already set for red",350,40);
+		surface.fill(0);
+		surface.text("current boarding group:",200,40);
+		surface.fill(boardingGroups[i].getRed(),boardingGroups[i].getGreen(),boardingGroups[i].getBlue());
+		surface.rect(200,50,50,50);
+		
+		
+		
 		
 		if(createQueueButtonPressed)
 			surface.fill(255, 0, 0);
@@ -47,6 +54,7 @@ public class MainScreen extends Screen{
 		surface.fill(0);
 		surface.text("create queue", 40, 40);
 		
+		
 	}
 	/**
 	 * @param x mouse X click
@@ -56,13 +64,16 @@ public class MainScreen extends Screen{
 	public void mousePressed(int mouseX, int mouseY) {
 		if(mouseX > queueX && mouseX < (queueLength + queueX) && mouseY > queueY && mouseY < (queueY + queueHeight)) {
 			createQueueButtonPressed = true;
+			
 		}
 		if(mouseX > 400 && mouseX < (500) && mouseY > 40 && mouseY < (90))
 		{
-			createBoardingGroupPressed= true;	
+			createBoardingGroupPressed= true;
+			i++;
+			System.out.println("color changed");
 		}
-			
-		boeing747.seatClick(mouseX,mouseY);
+		if(i<boardingGroups.length)
+		boeing747.seatClick(mouseX,mouseY,boardingGroups[i]);
 		
 		
 	}
@@ -90,8 +101,8 @@ public class MainScreen extends Screen{
 		boardingGroups[0]= Color.RED;
 		boardingGroups[1]= Color.GREEN;
 		boardingGroups[2]= Color.BLUE;
-		boardingGroups[3]= Color.ORANGE;
-		boardingGroups[4]= Color.BLACK;
+		boardingGroups[3]= Color.BLACK;
+		boardingGroups[4]= Color.CYAN;
 		boardingGroups[5]= Color.YELLOW;
 		boardingGroups[6]= Color.DARK_GRAY;
 		

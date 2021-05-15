@@ -36,7 +36,8 @@ public class Seats
 	/**
 	 * when clicked on the boarding group menu, the value of boarding group color is updated accordingly to the user input
 	 */
-	public void setBoardingColor() {
+	public void setBoardingColor(Color color) {
+		BoardingColor= color;
 		
 		
 	}
