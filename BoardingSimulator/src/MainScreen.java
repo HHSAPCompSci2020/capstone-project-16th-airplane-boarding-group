@@ -108,7 +108,7 @@ public class MainScreen extends Screen{
 	}
 	
 	public Color[] getBoardingGroup() {
-		Color [] trimmedGroups =Arrays.copyOfRange(boardingGroups,0,i);
+		Color [] trimmedGroups =Arrays.copyOfRange(boardingGroups,0,i+1);
 		return trimmedGroups;
 	}
 /**
