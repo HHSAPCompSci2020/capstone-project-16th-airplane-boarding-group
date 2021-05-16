@@ -14,7 +14,7 @@ public class MainScreen extends Screen{
 	
 	// screen no 0
 	
-	Aircraft boeing747;
+	private Aircraft boeing747;
 
 	private Color[] boardingGroups;
 	private Color[] trim;
@@ -178,6 +178,10 @@ public class MainScreen extends Screen{
 		
 		
 		}
+	
+	public Aircraft getAircraft() {
+		return boeing747;
+	}
 	
 }
 

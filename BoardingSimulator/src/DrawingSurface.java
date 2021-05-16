@@ -58,10 +58,13 @@ public class DrawingSurface extends PApplet {
 			}
 		}
 		activeScreen = screens.get(index);
+		
 		if(activeScreen instanceof QueueScreen && colors != null)
 			((QueueScreen) activeScreen).setboardingGroup(colors);
-		else if(activeScreen instanceof Play && colors!= null)
+		else if(activeScreen instanceof Play && colors!= null) {
 			((Play)activeScreen).setBoardingGroup(colors);
+			((Play)activeScreen).setAirplane(screen1.getAircraft());
+		}		
 	
 	}
 }

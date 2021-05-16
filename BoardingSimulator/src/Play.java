@@ -14,7 +14,7 @@ public class Play  extends Screen{
  
 	public Play(DrawingSurface marker) {
 		super(marker);
-		airplane = new Aircraft();
+		
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -28,6 +28,10 @@ public class Play  extends Screen{
 	}
 	public void mousePressed() {
 		
+	}
+	
+	public void setAirplane(Aircraft boeing) {
+		airplane = boeing;
 	}
 	
 	
