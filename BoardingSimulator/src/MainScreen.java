@@ -6,7 +6,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.awt.Graphics;
 import javax.swing.JFrame;
-
+/**
+@author Joshua Choi
+@coauthor 
+*/
 public class MainScreen extends Screen{
 	
 	// screen no 0
@@ -151,6 +154,8 @@ public class MainScreen extends Screen{
 		for(int i = 0; i < aisle2.length; i++) {
 			for(int n = 0; n < aisle2[i].length; n++) {
 				Color color = aisle2[i][n].getColor();
+				if(currentColor<boardingGroups.length)
+				{
 				if(boardingGroups[currentColor].equals(color)) {
 					hasUsedColor = true;
 				}
@@ -161,4 +166,5 @@ public class MainScreen extends Screen{
 	}
 		
 
+}
 }
