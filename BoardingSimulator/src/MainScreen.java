@@ -23,7 +23,7 @@ public class MainScreen extends Screen{
 	int queueY = 40;
 	int queueLength = 100;
 	int queueHeight = 50;
-	int i=0;
+	int currentColor =0;
 	
 
 	/**
@@ -50,10 +50,11 @@ public class MainScreen extends Screen{
 		
 		surface.fill(0);
 		surface.text("current boarding group:",200,40);
-		if(i<boardingGroups.length)
-		surface.fill(boardingGroups[i].getRed(),boardingGroups[i].getGreen(),boardingGroups[i].getBlue());
+		if(currentColor<boardingGroups.length)
+		surface.fill(boardingGroups[currentColor].getRed(),
+				boardingGroups[currentColor].getGreen(),boardingGroups[currentColor].getBlue());
 		else {
-			surface.text("that's all the boarding groups we have set for you",100,100+i*10);
+			surface.text("that's all the boarding groups we have set for you",100,100+currentColor*10);
 		}
 		surface.rect(200,50,50,50);
 		
@@ -83,14 +84,15 @@ public class MainScreen extends Screen{
 		}
 		if(mouseX > 400 && mouseX < (500) && mouseY > 40 && mouseY < (90))
 		{
-			createBoardingGroupPressed= true;
-		
-			i++;
+			if(hasUsedColor()) {
+				createBoardingGroupPressed= true;
+				currentColor++;
+				System.out.println("color changed");
+			}
 			
-			System.out.println("color changed");
 		}
-		if(i<boardingGroups.length)
-		boeing747.seatClick(mouseX,mouseY,boardingGroups[i]);
+		if(currentColor<boardingGroups.length)
+		boeing747.seatClick(mouseX,mouseY,boardingGroups[currentColor]);
 		
 		
 	}
@@ -111,7 +113,7 @@ public class MainScreen extends Screen{
 	}
 	
 	public Color[] getBoardingGroup() {
-		Color [] trimmedGroups =Arrays.copyOfRange(boardingGroups,0,i+1);
+		Color [] trimmedGroups =Arrays.copyOfRange(boardingGroups,0,currentColor+1);
 		return trimmedGroups;
 	}
 /**
@@ -128,6 +130,31 @@ public class MainScreen extends Screen{
 		boardingGroups[5]= Color.YELLOW;
 		boardingGroups[6]= Color.LIGHT_GRAY;
 		
+	}
+	
+	private boolean hasUsedColor() {
+		boolean hasUsedColor = false;
+		Seats[][] aisle1 = boeing747.getaisle1();
+		Seats[][] aisle2 = boeing747.getaisle2();
+		for(int i = 0; i < aisle1.length; i++) {
+			for(int n = 0; n < aisle1[i].length; n++) {
+				Color color = aisle1[i][n].getColor();
+				if(boardingGroups[currentColor].equals(color)) {
+					hasUsedColor = true;
+				}
+			}
+		}
+		
+		for(int i = 0; i < aisle2.length; i++) {
+			for(int n = 0; n < aisle2[i].length; n++) {
+				Color color = aisle2[i][n].getColor();
+				if(boardingGroups[currentColor].equals(color)) {
+					hasUsedColor = true;
+				}
+			}
+		}
+		
+		return hasUsedColor;
 	}
 		
 

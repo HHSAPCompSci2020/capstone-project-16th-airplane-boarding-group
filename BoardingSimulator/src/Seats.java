@@ -71,6 +71,10 @@ public class Seats
 		else
 			return false;
 	}
+	public Color getColor() {
+		// TODO Auto-generated method stub
+		return BoardingColor;
+	}
 	
 	
 	
