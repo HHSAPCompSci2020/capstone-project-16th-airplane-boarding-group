@@ -127,4 +127,11 @@ public class Aircraft {
 			}
 		}
 	}
+	
+	public Seats[][] getaisle1() {
+		return aisle1;
+	}
+	public Seats[][] getaisle2() {
+		return aisle2;
+	}
 }
