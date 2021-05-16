@@ -2,8 +2,8 @@ import processing.core.PApplet;
 
 import java.awt.Color;
 import java.util.ArrayList;
-
 import javax.swing.JPanel;
+
 public class DrawingSurface extends PApplet {
 	
 	private MainScreen screen1; // 0
@@ -37,6 +37,11 @@ public class DrawingSurface extends PApplet {
 		
 	}
 	
+	public void mouseDragged() {
+		activeScreen.mouseDragged(mouseX, mouseY);
+		
+	}
+	
 	public void mouseReleased() {
 		Color[] colors = null;
 		int index = activeScreen.mouseReleased();
@@ -44,13 +49,20 @@ public class DrawingSurface extends PApplet {
 		if(activeScreen instanceof MainScreen && index  == 1) {
 			colors = ((MainScreen)activeScreen).getBoardingGroup();
 			if(colors == null) {
-				System.out.println("hello");
+				index--;
+			}
+		}
+		else if(activeScreen instanceof QueueScreen && index == 2) {
+			colors = ((QueueScreen)activeScreen).getFinalList();
+			if(colors == null) {
 				index--;
 			}
 		}
 		activeScreen = screens.get(index);
 		if(activeScreen instanceof QueueScreen && colors != null)
 			((QueueScreen) activeScreen).setboardingGroup(colors);
-	}
+		else if(activeScreen instanceof Play && colors!= null)
+			((Play)activeScreen).setBoardingGroup(colors);
 	
+	}
 }
