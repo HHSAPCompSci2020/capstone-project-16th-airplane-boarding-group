@@ -27,11 +27,7 @@ public class Time {
 	
 	int seconds = 0;
 	int minutes = 0;
-	long startTime = System.currentTimeMillis();
-	long elapsedTime = System.currentTimeMillis() - startTime;
-	long elapsedSeconds = elapsedTime / 1000;
-	long secondsDisplay = elapsedSeconds % 60;
-	long elapsedMinutes = elapsedSeconds / 60;
+
 	/**
 	 *
 	 * initializing values in timer
