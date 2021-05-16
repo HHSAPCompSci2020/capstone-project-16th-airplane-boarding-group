@@ -14,6 +14,7 @@ public class Play  extends Screen{
  
 	public Play(DrawingSurface marker) {
 		super(marker);
+		airplane = new Aircraft();
 		// TODO Auto-generated constructor stub
 	}
 	
