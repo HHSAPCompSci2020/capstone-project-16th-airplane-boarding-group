@@ -13,7 +13,7 @@ public class Play  extends Screen{
 	Passenger passengers;
 	Timer timer = new Timer();
 	private Color[] boardingGroups;
-	private boolean createQueueButtonPressed;
+	private boolean abortPressed;
 	private boolean createBoardingGroupPressed;
 	int queueX = 40;
 	int queueY = 40;
@@ -36,19 +36,19 @@ public class Play  extends Screen{
 		surface.fill(0);
 		surface.rect(200,50,50,50);
 		timer.draw(surface);
-		if(createQueueButtonPressed)
+		if(abortPressed)
 			surface.fill(255, 0, 0);
 		else
 			surface.fill(255);
 		
 		surface.rect(40, 40, 100, 50);
 		surface.fill(0);
-		surface.text("create queue", 40, 40);
+		surface.text("Abort", 40, 40);
 	}
 	
 	public void mousePressed(int mouseX, int mouseY) {
 		if(mouseX > queueX && mouseX < (queueLength + queueX) && mouseY > queueY && mouseY < (queueY + queueHeight)) {
-			createQueueButtonPressed = true;
+			abortPressed = true;
 			
 		}
 		if(mouseX > 400 && mouseX < (500) && mouseY > 40 && mouseY < (90))
@@ -68,7 +68,7 @@ public class Play  extends Screen{
 	}
 	
 	public Color[] getBoardingGroup() {
-		Color [] trimmedGroups =Arrays.copyOfRange(boardingGroups,0,i);
+		Color [] trimmedGroups = Arrays.copyOfRange(boardingGroups,0,i);
 		return trimmedGroups;
 	}
 
