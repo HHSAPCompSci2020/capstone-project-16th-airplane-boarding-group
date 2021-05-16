@@ -66,12 +66,12 @@ public class Time {
 	Timer tTimer = new Timer();
 	TimerTask task = new TimerTask() {
 		public void run() {
-			for(int i = 60; i>seconds; seconds++) {
-				if(seconds==60) {
+			for(int i = 60; i>seconds; ) {
+				if(i==60) {
 					minutes = seconds/60;
 					seconds = 0;
 				}
-				
+				seconds++;
 			}
 			System.out.println(minutes + ":" + seconds);
 		}

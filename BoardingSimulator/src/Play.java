@@ -2,7 +2,7 @@ import java.awt.Color;
 
 public class Play  extends Screen{
 	
-	//Timer timer = new Timer();
+	Time timer = new Time();
 	
 	int passengerRadius = 20;
 	Aircraft airplane;
@@ -20,6 +20,7 @@ public class Play  extends Screen{
 	
 	public void draw() {
 		airplane.draw(surface);
+		timer.draw(surface);
 	}
 	
 	public void setBoardingGroup(Color[] colors) {
