@@ -25,14 +25,14 @@ public class Time {
 	
 	int seconds = 0;
 	int minutes = 0;
-	Timer tTimer = new Timer();
+	
 	
 	/**
 	 *
 	 * initializing values in timer
 	 * 
 	 */
-	public Time(int x,int y,int width, int height, int screenWidth, int screenHeight, double seconds, double minutes)
+	public Time()
 	{
 		this.x=x;
 		this.y=y;
@@ -54,24 +54,29 @@ public class Time {
 		marker.textSize(20);
 		marker.text(minutes + ":" + seconds, 35,40);
 		marker.rect(x, y, screenWidth, screenHeight);
+		
+		Time clock = new Time();
+		clock.start();
 	}
 	
 	/**
 	 * starts timer constructor
 	 *  
 	 */
+	Timer tTimer = new Timer();
+	TimerTask task = new TimerTask() {
+		public void run() {
+			seconds++;
+			minutes = seconds/60;
+			System.out.println(minutes + ":" + seconds);
+		}
+	};
+	
+	public void start() {
+		tTimer.scheduleAtFixedRate(task, 1000, 1000);
+	};
 
-	  TimerTask task = new TimerTask() {
-			public void run() {
-				seconds++;
-				minutes = seconds/60;
-				System.out.println(minutes + ":" + seconds);
-			}
-		};
-		
-		public void start() {
-			tTimer.scheduleAtFixedRate(task, 1000, 1000);
-		};
+	  
 
 	  
 	public int getX() {
