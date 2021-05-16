@@ -178,6 +178,7 @@ public class QueueScreen extends Screen{
 	 * @return finalList
 	 */
 	public Color[] getFinalList() {
+		System.out.println(finalList);
 		return finalList;
 	}
 	

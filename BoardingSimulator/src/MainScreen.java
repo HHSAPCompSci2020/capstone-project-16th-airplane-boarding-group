@@ -6,7 +6,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.awt.Graphics;
 import javax.swing.JFrame;
-
+/**
+@author Joshua Choi
+@coauthor 
+*/
 public class MainScreen extends Screen{
 	
 	// screen no 0
@@ -51,8 +54,10 @@ public class MainScreen extends Screen{
 		surface.fill(0);
 		surface.text("current boarding group:",200,40);
 		if(currentColor<boardingGroups.length)
+		{
 		surface.fill(boardingGroups[currentColor].getRed(),
 				boardingGroups[currentColor].getGreen(),boardingGroups[currentColor].getBlue());
+		}
 		else {
 			surface.text("that's all the boarding groups we have set for you",100,100+currentColor*10);
 		}
@@ -139,23 +144,42 @@ public class MainScreen extends Screen{
 		for(int i = 0; i < aisle1.length; i++) {
 			for(int n = 0; n < aisle1[i].length; n++) {
 				Color color = aisle1[i][n].getColor();
-				if(boardingGroups[currentColor].equals(color)) {
+				if(currentColor<boardingGroups.length)
+				{
+					
+					if(boardingGroups[currentColor].equals(color)) 
 					hasUsedColor = true;
 				}
+				else
+				{
+					surface.text("that's all the boarding groups we have set for you",100,100+currentColor*10);
+				}
+				
 			}
 		}
 		
-		for(int i = 0; i < aisle2.length; i++) {
+		for(int i = 0; i < aisle2.length; i++) 
+		{
 			for(int n = 0; n < aisle2[i].length; n++) {
 				Color color = aisle2[i][n].getColor();
-				if(boardingGroups[currentColor].equals(color)) {
+				if(currentColor<boardingGroups.length)
+				{
+				if(boardingGroups[currentColor].equals(color)) 
 					hasUsedColor = true;
+				}
+				else
+				{
+					surface.text("that's all the boarding groups we have set for you",100,100+currentColor*10);
 				}
 			}
 		}
 		
 		return hasUsedColor;
-	}
 		
-
+		
+		}
+	
 }
+
+
+
