@@ -139,8 +139,11 @@ public class MainScreen extends Screen{
 		for(int i = 0; i < aisle1.length; i++) {
 			for(int n = 0; n < aisle1[i].length; n++) {
 				Color color = aisle1[i][n].getColor();
+				if(currentColor<boardingGroups.length)
+				{
 				if(boardingGroups[currentColor].equals(color)) {
 					hasUsedColor = true;
+				}
 				}
 			}
 		}
