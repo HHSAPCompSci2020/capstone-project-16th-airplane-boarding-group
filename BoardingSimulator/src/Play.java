@@ -20,7 +20,12 @@ public class Play  extends Screen{
 	
 	public void draw() {
 		airplane.draw(surface);
-		timer.draw(surface);
+		try {
+			timer.draw(surface);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public void setBoardingGroup(Color[] colors) {

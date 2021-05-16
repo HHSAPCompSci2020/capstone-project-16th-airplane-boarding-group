@@ -1,8 +1,7 @@
 import java.awt.Color; 
 import java.util.Timer;
 import java.util.TimerTask;
-
-import processing.core.PApplet;
+import java.util.concurrent.TimeUnit;
 /**
  * The timer class that keeps track of the time spent in the program, once run
  * 
@@ -10,6 +9,9 @@ import processing.core.PApplet;
  * @version 5/14
  *
  */
+
+import processing.core.PApplet;
+
 public class Time {
 	
 	private int x,y;
@@ -25,8 +27,11 @@ public class Time {
 	
 	int seconds = 0;
 	int minutes = 0;
-	
-	
+	long startTime = System.currentTimeMillis();
+	long elapsedTime = System.currentTimeMillis() - startTime;
+	long elapsedSeconds = elapsedTime / 1000;
+	long secondsDisplay = elapsedSeconds % 60;
+	long elapsedMinutes = elapsedSeconds / 60;
 	/**
 	 *
 	 * initializing values in timer
@@ -48,13 +53,33 @@ public class Time {
 	 *
 	 * Draw method for the timer
 	 * @param marker 
+	 * @throws InterruptedException 
 	 */
-	public void draw(PApplet marker) {
+	public void draw(PApplet marker) throws InterruptedException {
 		marker.fill(0);
 		marker.textSize(20);
-		marker.text(minutes + ":" + seconds, 35,40);
+		//marker.text(elapsedMinutes + ":" + elapsedSeconds, 35,40);
 		marker.rect(x, y, screenWidth, screenHeight);
-		
+		boolean x=true;
+	    long minutes=0;
+	    long start=System.currentTimeMillis();
+	    while(x)
+	    {
+	        TimeUnit.SECONDS.sleep(1);
+	        long timepassed=System.currentTimeMillis()-start;
+	        long seconds=timepassed/1000;
+	        if(seconds==60)
+	        {
+	            seconds=0;
+	            start=System.currentTimeMillis();
+	        }
+	        if((seconds%60)==0)
+	        minutes++;
+
+	        marker.fill(0);
+			marker.textSize(20);
+	        marker.text(minutes+":"+seconds, 35,40);
+	    }
 		Time clock = new Time();
 		clock.start();
 	}
@@ -95,6 +120,14 @@ public class Time {
 	}
 	public int getHeight() {
 		return height;
+	}
+	
+	public int getMinutes() {
+		return minutes;
+	}
+	
+	public int getSeconds() {
+		return seconds;
 	}
 
 }
