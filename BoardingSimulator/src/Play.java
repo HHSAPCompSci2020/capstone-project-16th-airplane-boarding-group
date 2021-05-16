@@ -22,5 +22,8 @@ public class Play  extends Screen{
 		boardingGroups = colors;
 		//for()
 	}
+	public void mousePressed() {
+		
+	}
 
 }
