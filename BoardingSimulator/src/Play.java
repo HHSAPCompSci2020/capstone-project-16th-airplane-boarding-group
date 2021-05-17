@@ -2,7 +2,7 @@ import java.awt.Color;
 
 public class Play  extends Screen{
 	
-	Time timer = new Time();
+	Time time = new Time();
 	
 	int passengerRadius = 20;
 	Aircraft airplane;
@@ -20,10 +20,10 @@ public class Play  extends Screen{
 	
 	public void draw() {
 		airplane.draw(surface);
+		
 		try {
-			timer.draw(surface);
+			time.draw(surface);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

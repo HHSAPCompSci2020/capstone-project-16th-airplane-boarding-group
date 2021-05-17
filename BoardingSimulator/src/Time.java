@@ -1,4 +1,6 @@
-import java.awt.Color; 
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
@@ -44,6 +46,7 @@ public class Time {
 		this.start=start;
 		this.total=total;
 		this.isRunning = false;
+		this.seconds=seconds;
 	}
 	/**
 	 *
@@ -51,8 +54,8 @@ public class Time {
 	 * @param marker 
 	 * @throws InterruptedException 
 	 */
-	public void draw(PApplet marker) throws InterruptedException {
-		marker.fill(0);
+	public void draw(PApplet marker) throws InterruptedException{
+		/*marker.fill(0);
 		marker.textSize(20);
 		//marker.text(elapsedMinutes + ":" + elapsedSeconds, 35,40);
 		marker.rect(x, y, screenWidth, screenHeight);
@@ -76,31 +79,32 @@ public class Time {
 			marker.textSize(20);
 	        marker.text(minutes+":"+seconds, 35,40);
 	    }
+	
+		
 		Time clock = new Time();
-		clock.start();
+		clock.start();*/
+		
+	     int v = 1;
+	     
+	     for(int i = 0; i < v; v++) {
+	    	 
+	    	 TimeUnit.SECONDS.sleep(1);
+	    	 String seconds_string = String.format("%02d", i);
+	    	 int j = 0;
+	    	 if (i==60) {
+	    		 j++;
+	    	 } 
+	    	 String minutes_string = String.format("%02d", j);
+	    	 i++;
+		     
+	    	 marker.fill(0);
+			 marker.textSize(20);
+		     marker.text(minutes_string + ":" + seconds_string, 35,40);
+		        
+	     }
 	}
 	
-	/**
-	 * starts timer constructor
-	 *  
-	 */
-	Timer tTimer = new Timer();
-	TimerTask task = new TimerTask() {
-		public void run() {
-			for(int i = 60; i>seconds; ) {
-				if(i==60) {
-					minutes = seconds/60;
-					seconds = 0;
-				}
-				seconds++;
-			}
-			System.out.println(minutes + ":" + seconds);
-		}
-	};
 	
-	public void start() {
-		tTimer.scheduleAtFixedRate(task, 1000, 1000);
-	};
 
 	  
 
