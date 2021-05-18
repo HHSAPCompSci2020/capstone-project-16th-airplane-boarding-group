@@ -3,6 +3,12 @@ import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 
+/**
+ * 
+ * @author Aryan Keskar
+ *
+ */
+
 public class DrawingSurface extends PApplet {
 	
 	private MainScreen screen1; // 0
