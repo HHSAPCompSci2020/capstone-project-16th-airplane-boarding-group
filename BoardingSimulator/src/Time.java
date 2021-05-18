@@ -31,9 +31,7 @@ public class Time {
 	int minutes = 0;
 
 	/**
-	 *
 	 * initializing values in timer
-	 * 
 	 */
 	public Time()
 	{
@@ -84,31 +82,27 @@ public class Time {
 		Time clock = new Time();
 		clock.start();*/
 		
-	     int v = 1;
-	     
+		int v = 1;
+	    int j = 0;
 	     for(int i = 0; i < v; v++) {
-	    	 
-	    	 TimeUnit.SECONDS.sleep(1);
-	    	 String seconds_string = String.format("%02d", i);
-	    	 int j = 0;
-	    	 if (i==60) {
-	    		 j++;
-	    	 } 
-	    	 String minutes_string = String.format("%02d", j);
 	    	 i++;
+	    	 //TimeUnit.SECONDS.sleep(1); // the problem with the program
+	    	 if ((i%60)==0&&i!=0) {
+	    		 j++;
+	    		 i=0;
+	    	 } 
+	    	 String seconds_string = String.format("%02d", i);
+	    	 String minutes_string = String.format("%02d", j);
+	    	 //i++;
 		     
 	    	 marker.fill(0);
 			 marker.textSize(20);
 		     marker.text(minutes_string + ":" + seconds_string, 35,40);
+	    	 //System.out.println(minutes_string+":"+seconds_string);
 		        
 	     }
-	}
+	}  
 	
-	
-
-	  
-
-	  
 	public int getX() {
 		return x;
 	}

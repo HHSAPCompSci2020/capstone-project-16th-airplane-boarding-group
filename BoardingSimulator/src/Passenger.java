@@ -86,6 +86,15 @@ public class Passenger {
 		return isColliding;
 	}
 	
+	private boolean isSpawning(Passenger next) {
+		int passX = next.getX();
+		int passY = next.getY();
+		
+		
+		return false;
+		
+	}
+	
 	public int getRadius() {
 		return radius;
 	}
