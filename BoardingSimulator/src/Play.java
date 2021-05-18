@@ -39,7 +39,10 @@ public class Play  extends Screen{
 	public void setAirplane(Aircraft boeing) {
 		airplane = boeing;
 		passengers = new Passenger[airplane.getOccupiedSeats()];
+		
+		
 	}
+
 	
 	
 

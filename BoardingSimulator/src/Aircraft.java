@@ -135,6 +135,30 @@ public class Aircraft {
 		return aisle2;
 	}
 	public int getOccupiedSeats() {
-		return 0;
+		int occupied = 0;
+		for(int i = 0;i<aisle1.length;i++)
+		{
+			for(int j=0;j<aisle1[0].length;j++)
+			{
+				if(aisle1[i][j].getColor()!=Color.WHITE)
+				{
+					occupied++;
+				}
+			}
+			
+		}
+		for(int i = 0;i<aisle2.length;i++)
+		{
+			for(int j=0;j<aisle2[0].length;j++)
+			{
+				if(aisle2[i][j].getColor()!=Color.WHITE)
+				{
+					occupied++;
+				}
+			}
+			
+		}
+		System.out.println(occupied+"seats");
+		return occupied;
 	}
 }
