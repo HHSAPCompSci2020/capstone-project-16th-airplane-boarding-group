@@ -49,6 +49,7 @@ public class DrawingSurface extends PApplet {
 	
 	public void mouseReleased() {
 		Color[] colors = null;
+		int numSeats = 0;
 		int index = activeScreen.mouseReleased();
 		
 		if(activeScreen instanceof MainScreen && index  == 1) {

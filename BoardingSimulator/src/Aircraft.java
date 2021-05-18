@@ -134,4 +134,7 @@ public class Aircraft {
 	public Seats[][] getaisle2() {
 		return aisle2;
 	}
+	public int getOccupiedSeats() {
+		return 0;
+	}
 }

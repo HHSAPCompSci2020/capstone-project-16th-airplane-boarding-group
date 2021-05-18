@@ -4,19 +4,16 @@ import processing.core.PApplet;
 public class Passenger {
 	
 	private int x, y;
-	private int radius;
+	private final int RADIUS = 20;
 	private int speed;
-	private int seatLocationX;
-	private int seatLocationY;
 	
 	private boolean isSeated;
 	
-	public Passenger(int x, int y, int radius, Color boardingGroup, int seatLocationX, int seatLocationY) {
+	public Passenger(int x, int y) {
 		this.x = x;
 		this.y = y;
-		this.radius = radius;
-		this.seatLocationX = seatLocationX;
-		this.seatLocationY = seatLocationY;
+		
+		
 		isSeated = false;
 		
 		speed = (int)((Math.random() * 10) +1);
@@ -24,7 +21,7 @@ public class Passenger {
 	
 	public void draw(PApplet marker) {
 		marker.fill(0);
-		marker.circle(x, y, radius);
+		marker.circle(x, y, RADIUS);
 	}
 	
 	private void walk(int seatX, int seatY) 
@@ -53,7 +50,7 @@ public class Passenger {
 	}
 	
 	
-	private void locateSeat() {
+	private void locateSeat(int seatLocationX, int seatLocationY) {
 		if(isSeated==false) {
 			this.walk(seatLocationX,seatLocationY);
 			isSeated = true;
@@ -64,17 +61,17 @@ public class Passenger {
 	private boolean isColliding(Passenger other) {
 		boolean isColliding = false;
 		
-		int extremeX = other.getX() + radius;
-		int extrmeY = other.getY() + radius;
+		int extremeX = other.getX() + RADIUS;
+		int extrmeY = other.getY() + RADIUS;
 		
-		int minX = other.getX() - radius;
-		int minY = other.getY() - radius;
+		int minX = other.getX() - RADIUS;
+		int minY = other.getY() - RADIUS;
 		
-		int maxThisX = x + radius;
-		int maxThisY = y + radius;
+		int maxThisX = x + RADIUS;
+		int maxThisY = y + RADIUS;
 		
-		int minThisX = x - radius;
-		int minThisY = y - radius;
+		int minThisX = x - RADIUS;
+		int minThisY = y - RADIUS;
 		
 		if(((maxThisX<=extremeX && maxThisX>=minX)
 			||(minThisX<=extremeX && minThisX>=minX))
@@ -87,7 +84,7 @@ public class Passenger {
 	}
 	
 	public int getRadius() {
-		return radius;
+		return RADIUS;
 	}
 	public int getX() {
 		return x;
