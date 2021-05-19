@@ -90,6 +90,9 @@ public class Passenger {
 		int passX = next.getX();
 		int passY = next.getY();
 		
+		int distance = 70;
+		
+		
 		
 		return false;
 		
