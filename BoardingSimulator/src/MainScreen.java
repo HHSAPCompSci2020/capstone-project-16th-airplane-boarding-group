@@ -173,9 +173,7 @@ public class MainScreen extends Screen{
 				}
 			}
 		}
-		
 		return hasUsedColor;
-		
 		
 		}
 	
@@ -184,6 +182,3 @@ public class MainScreen extends Screen{
 	}
 	
 }
-
-
-

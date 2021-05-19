@@ -3,6 +3,12 @@ import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 
+/**
+ * 
+ * @author Aryan Keskar
+ *
+ */
+
 public class DrawingSurface extends PApplet {
 	
 	private MainScreen screen1; // 0
@@ -43,6 +49,7 @@ public class DrawingSurface extends PApplet {
 	
 	public void mouseReleased() {
 		Color[] colors = null;
+		int numSeats = 0;
 		int index = activeScreen.mouseReleased();
 		
 		if(activeScreen instanceof MainScreen && index  == 1) {
