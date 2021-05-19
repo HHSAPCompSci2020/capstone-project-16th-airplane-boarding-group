@@ -6,17 +6,17 @@ public class Passenger {
 	private int x, y;
 	private final int RADIUS = 20;
 	private int speed;
-	
+	private Color passengerColor;
 	private boolean isSeated;
 	
-	public Passenger(int x, int y) {
+	public Passenger(int x, int y,Color passengerColor) {
 		this.x = x;
 		this.y = y;
-		
+		this.passengerColor=passengerColor;
 		
 		isSeated = false;
 		
-		speed = (int)((Math.random() * 10) +1);
+		speed = 10;
 	}
 	
 	public void draw(PApplet marker) {
