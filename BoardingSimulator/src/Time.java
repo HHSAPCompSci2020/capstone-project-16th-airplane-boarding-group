@@ -28,8 +28,6 @@ public class Time {
 	int seconds = 0;
 	int minutes = 0;
 	
-	Timer timer;
-
 	/**
 	 * initializing values in timer
 	 */
@@ -52,23 +50,27 @@ public class Time {
 	 * @throws InterruptedException 
 	 */
 	public void draw(PApplet marker){
+		String minutesString = String.format("%02d", getMinutes());
+		String secondsString = String.format("%02d", getSeconds());
+		
 	     marker.fill(0);
 	     marker.textSize(20);
-		 marker.text(minutes() + ":" + seconds(), 35,40);
+		 marker.text(minutesString + ":" + secondsString, 35,40);
 	}  
 	
-	public int seconds() {
+	public int getSeconds() {
 		seconds++;
 		count = seconds/60;
+		
 		if((seconds%3600)==0&seconds!=0){
 			seconds=0;
+			minutes++;
 		}
+		
 		return count;
 	}
 	
-	public int minutes() {
-		minutes = seconds/3600;
-		
+	public int getMinutes() {
 		return minutes;
 	}
 	
@@ -83,14 +85,6 @@ public class Time {
 	}
 	public int getHeight() {
 		return height;
-	}
-	
-	public int getMinutes() {
-		return minutes;
-	}
-	
-	public int getSeconds() {
-		return seconds;
 	}
 
 }

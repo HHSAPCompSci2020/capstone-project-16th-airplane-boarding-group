@@ -73,7 +73,7 @@ public class Play  extends Screen{
 			}
 		}
 	for(int i = 0; i < passengers.length; i++) {
-		System.out.println(passengers[i].getColor());
+		//System.out.println(passengers[i].getColor());
 	}
 		
 	}
