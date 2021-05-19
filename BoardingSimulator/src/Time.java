@@ -33,21 +33,13 @@ public class Time {
 	 */
 	public Time()
 	{
-		this.x=x;
-		this.y=y;
-		this.width=width;
-		this.height=height;
-		this.screenWidth=screenWidth;
-		this.screenHeight=screenHeight;
-		this.start=start;
-		this.total=total;
 		this.seconds=seconds;
+		this.minutes=minutes;
+		this.count=count;
 	}
 	/**
-	 *
 	 * Draw method for the timer
 	 * @param marker 
-	 * @throws InterruptedException 
 	 */
 	public void draw(PApplet marker){
 		String minutesString = String.format("%02d", getMinutes());
@@ -58,6 +50,10 @@ public class Time {
 		 marker.text(minutesString + ":" + secondsString, 35,40);
 	}  
 	
+	/**
+	 * Returns the time in seconds
+	 * 
+	 */
 	public int getSeconds() {
 		seconds++;
 		count = seconds/60;
@@ -70,6 +66,10 @@ public class Time {
 		return count;
 	}
 	
+	/**
+	 * Returns the time in minutes
+	 * 
+	 */
 	public int getMinutes() {
 		return minutes;
 	}
