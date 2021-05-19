@@ -67,7 +67,6 @@ public class Time {
 	}
 	
 	public int minutes() {
-		seconds++;
 		minutes = seconds/3600;
 		
 		return minutes;
