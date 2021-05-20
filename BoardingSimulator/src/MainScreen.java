@@ -46,13 +46,15 @@ public class MainScreen extends Screen{
 		boeing747.draw(surface);
 		surface.rect(400,40,100,50);
 		surface.fill(0);
-		surface.text("click here",430,60);
-		surface.text("click here to every time you want to make each boarding group, the first group is already set for red",350,40);
-		surface.text("you simply have to click individual seats to assign them to a boarding group",400,30);
-		surface.text("keep in mind that the maximum of groups you can use is 7, but you can use fewer to your liking",600,60);
+		surface.text("click here",425,60);
+		surface.text("to change color",405,80);
+		surface.text("- click here every time you want to change to the next boarding group",520,40);
+		surface.text("- the first group is already set to red",520,60);
+		surface.text("- simply click each individual seat to assign them to a boarding group",520,80);
+		surface.text("- the maximum boarding groups is 7, but less than the max is runnable",520,100);
 		
 		surface.fill(0);
-		surface.text("current boarding group:",200,40);
+		surface.text("current \nboarding \ngroup:",210,55);
 		if(currentColor<boardingGroups.length)
 		{
 		surface.fill(boardingGroups[currentColor].getRed(),
@@ -61,7 +63,7 @@ public class MainScreen extends Screen{
 		else {
 			surface.text("that's all the boarding groups we have set for you",100,100+currentColor*10);
 		}
-		surface.rect(200,50,50,50);
+		surface.rect(270,40,50,50);
 		
 		
 		
@@ -69,11 +71,11 @@ public class MainScreen extends Screen{
 		if(createQueueButtonPressed)
 			surface.fill(255, 0, 0);
 		else
-			surface.fill(255);
+			surface.noFill();
 		
 		surface.rect(40, 40, 100, 50);
 		surface.fill(0);
-		surface.text("create queue", 40, 40);
+		surface.text("create queue", 55, 70);
 		
 		
 	}

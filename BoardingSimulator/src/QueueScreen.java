@@ -47,17 +47,26 @@ public class QueueScreen extends Screen{
 			surface.fill(255);
 		surface.rect(backX, buttonY, buttonWidth, buttonHeight);
 		
+		surface.fill(0);
+		surface.text("go back", 65, 50);
+		
 		if(playScreenButtonPressed)
 			surface.fill(255,0,0);
 		else 
 			surface.fill(255);
 		surface.rect(playX, buttonY, buttonWidth, buttonHeight);
 		
+		surface.fill(0);
+		surface.text("queue #1", 175, 50);
+		
 		if(donePressed)
 			surface.fill(255,0,0);
 		else 
 			surface.fill(255);
 		surface.rect(doneX, buttonY, buttonWidth, buttonHeight);
+		
+		surface.fill(0);
+		surface.text("queue #2", 285, 50);
 		
 		for(int i = 0; i < initialList.length; i++) {
 	
