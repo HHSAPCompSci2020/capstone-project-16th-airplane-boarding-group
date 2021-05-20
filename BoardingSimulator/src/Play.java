@@ -2,12 +2,13 @@ import java.awt.Color;
 
 public class Play  extends Screen{
 	
-	Time time = new Time();
+	private Time time = new Time();
 	
-	int passengerRadius = 20;
-	Aircraft airplane;
-	Color[] boardingGroups;
-	Passenger[] passengers;
+	private static final int SPAWN_X = 100;
+	private static final int SPAWN_Y = 440;
+	private Aircraft airplane;
+	private Color[] boardingGroups;
+	private Passenger[] passengers;
  
 	public Play(DrawingSurface marker) {
 		super(marker);
@@ -22,8 +23,10 @@ public class Play  extends Screen{
 		for(int i = 0; i < passengers.length; i++) {
 			if(passengers[i]!=null) {
 				passengers[i].draw(surface);
+				
 			}
 		}
+			
 		
 	}
 	
@@ -58,7 +61,7 @@ public class Play  extends Screen{
 		for(int i=0; i<boardingGroups.length;i++) {
 			
 				for(int j=0; j<airplane.getOccupiedGroups(boardingGroups[i]); j++) {
-					passengers[passengernumber]= new Passenger(100,100,boardingGroups[i]);
+					passengers[passengernumber]= new Passenger(SPAWN_X,SPAWN_Y,boardingGroups[i]);
 					passengernumber++;
 				}
 			}

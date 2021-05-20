@@ -4,7 +4,7 @@ import processing.core.PApplet;
 public class Passenger {
 	
 	private int x, y;
-	private final int RADIUS = 20;
+	private final int RADIUS = 50;
 	private int speed;
 	private Color passengerColor;
 	private boolean isSeated;
@@ -43,9 +43,8 @@ public class Passenger {
 		}
 		
 	}
-	public void act(int seatX, int seatY, Passenger other) {
-		if(!isColliding(other))
-			walk(seatX,  seatY);
+	public void act(int seatX, int seatY) {
+		walk(seatX,  seatY);
 
 	}
 	
@@ -58,7 +57,7 @@ public class Passenger {
 		
 	}
 	
-	private boolean isColliding(Passenger other) {
+	public boolean isColliding(Passenger other, int myIndex, int otherIndex) {
 		boolean isColliding = false;
 		
 		int extremeX = other.getX() + RADIUS;
