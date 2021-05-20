@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.util.concurrent.TimeUnit;
 
 public class Play  extends Screen{
 	
@@ -22,6 +23,12 @@ public class Play  extends Screen{
 		
 		for(int i = 0; i < passengers.length; i++) {
 			if(passengers[i]!=null) {
+			     try {
+			    	 TimeUnit.SECONDS.sleep(2);
+			        } catch (InterruptedException ie)
+			        {
+			            
+			        }
 				passengers[i].draw(surface);
 				
 			}
