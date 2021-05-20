@@ -1,12 +1,14 @@
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.util.concurrent.TimeUnit;
 
 public class Play  extends Screen{
 	
 	private Time time = new Time();
-	
+	static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 	private static final int SPAWN_X = 100;
-	private static final int SPAWN_Y = 440;
+	private static final int SPAWN_Y = (int) (screenSize.getHeight()*(37.0/72));
 	private Aircraft airplane;
 	private Color[] boardingGroups;
 	private Passenger[] passengers;
@@ -23,12 +25,13 @@ public class Play  extends Screen{
 		
 		for(int i = 0; i < passengers.length; i++) {
 			if(passengers[i]!=null) {
-			     try {
+			     /*try {
 			    	 TimeUnit.SECONDS.sleep(2);
 			        } catch (InterruptedException ie)
 			        {
 			            
 			        }
+			        */
 				passengers[i].draw(surface);
 				
 			}

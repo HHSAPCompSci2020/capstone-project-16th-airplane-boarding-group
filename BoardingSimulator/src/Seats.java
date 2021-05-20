@@ -38,7 +38,7 @@ public class Seats
 	 */
 	public void setBoardingColor(Color color) {
 		BoardingColor= color;
-
+		
 		
 		
 	}
