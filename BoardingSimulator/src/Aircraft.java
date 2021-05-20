@@ -158,19 +158,16 @@ public class Aircraft {
 			}
 			
 		}
-		System.out.println(occupied+"seats");
 		return occupied;
 	}
 	public int getOccupiedGroups(Color color)
 	{
-	System.out.println(color);
 		int occupied= 0;
 		for(int i = 0;i<aisle1.length;i++)
 		{
 			for(int j=0;j<aisle1[0].length;j++)
 			{
-				System.out.println("yo");
-				if(aisle1[i][j].getColor()== color)
+				if(aisle1[i][j].getColor().equals(color))
 				{
 					
 					occupied++;
@@ -181,15 +178,13 @@ public class Aircraft {
 		{
 			for(int j=0;j<aisle2[0].length;j++)
 			{
-				System.out.println("yo");
-				if(aisle2[i][j].getColor()== color)
+				//System.out.println("yo");
+				if(aisle2[i][j].getColor().equals(color))
 				{
 				
 					occupied++;
 				}
 			}
-		
-		
 	}
 		return occupied;
 	

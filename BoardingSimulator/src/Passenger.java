@@ -104,4 +104,7 @@ public class Passenger {
 	public int getY() {
 		return y;
 	}
+	public Color getColor() {
+		return passengerColor;
+	}
 }

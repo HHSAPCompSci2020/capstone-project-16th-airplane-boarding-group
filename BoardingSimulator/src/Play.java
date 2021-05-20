@@ -8,9 +8,6 @@ public class Play  extends Screen{
 	Aircraft airplane;
 	Color[] boardingGroups;
 	Passenger[] passengers;
-	
-	
-	
  
 	public Play(DrawingSurface marker) {
 		super(marker);
@@ -20,8 +17,13 @@ public class Play  extends Screen{
 	
 	public void draw() {
 		airplane.draw(surface);
-	   
 		time.draw(surface);
+		
+		for(int i = 0; i < passengers.length; i++) {
+			if(passengers[i]!=null) {
+				passengers[i].draw(surface);
+			}
+		}
 		
 	}
 	
@@ -32,12 +34,6 @@ public class Play  extends Screen{
 	public void setBoardingGroup(Color[] colors) {
 		
 		boardingGroups = colors;
-		for(int i= 0;i<colors.length;i++)
-		{
-			boardingGroups[i]=colors[i];
-			
-			
-		}
 	}
 	public void mousePressed() {
 		
@@ -51,33 +47,28 @@ public class Play  extends Screen{
 		passengers = new Passenger[airplane.getOccupiedSeats()];
 		//System.out.println("red number of seats: " + airplane.getOccupiedGroups(boardingGroups[0]));
 		setPassengerToGroups();
-
-	
-		
 		
 	}
 	/**
 	 * creates new passenger objects, gives different values according to the color of the boarding group. 
 	 */
-	private void setPassengerToGroups()
-	
-	{
-	int passengernumber=0;
-	for(int i=0; i<boardingGroups.length;i++)
-		{
-			for(int j=0; j<airplane.getOccupiedGroups(boardingGroups[i]);j++)
-			{
-				passengers[passengernumber]= new Passenger(100,100,boardingGroups[i]);
-				passengernumber++;
-				//System.out.println("j");
-			}
-		}
-	for(int i = 0; i < passengers.length; i++) {
-		//System.out.println(passengers[i].getColor());
-	}
+	private void setPassengerToGroups() {
 		
+		int passengernumber=0;
+		for(int i=0; i<boardingGroups.length;i++) {
+			
+				for(int j=0; j<airplane.getOccupiedGroups(boardingGroups[i]); j++) {
+					passengers[passengernumber]= new Passenger(100,100,boardingGroups[i]);
+					passengernumber++;
+				}
+			}
+		for(int i = 0; i < passengers.length; i++) {
+		}
+			
 	}
 
-	
+	public int mouseReleased() {
+		return 2;
+	}
 
 }
