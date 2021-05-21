@@ -16,7 +16,7 @@ public class Passenger {
 		
 		isSeated = false;
 		
-		speed = 10;
+		speed = 2;
 	}
 	
 	public void draw(PApplet marker) {

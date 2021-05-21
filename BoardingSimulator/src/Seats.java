@@ -76,7 +76,14 @@ public class Seats
 		// TODO Auto-generated method stub
 		return BoardingColor;
 	}
+	public int getX()
+	{
+		return (int)(x+0.5*sideLength);
+	}
 	
-	
+	public int getY()
+	{
+		return (int)(y+0.5*sideLength);
+	}
 	
 }
