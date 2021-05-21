@@ -8,7 +8,6 @@ public class Passenger {
 	private int speed;
 	private Color passengerColor;
 	private boolean isSeated;
-	private int seatX,seatY;
 	
 	public Passenger(int x, int y,Color passengerColor) {
 		this.x = x;
@@ -17,7 +16,7 @@ public class Passenger {
 		
 		isSeated = false;
 		
-		speed = 2;
+		speed = 10;
 	}
 	
 	public void draw(PApplet marker) {
@@ -106,17 +105,5 @@ public class Passenger {
 	}
 	public Color getColor() {
 		return passengerColor;
-	}
-	public int getSeatX() {
-		return seatX;
-	}
-	public void setSeatX(int x) {
-		seatX = x;
-	}
-	public int getSeatY() {
-		return seatY;
-	}
-	public void setSeatY(int y) {
-		seatY = y;
 	}
 }
