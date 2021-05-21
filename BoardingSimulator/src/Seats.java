@@ -76,7 +76,21 @@ public class Seats
 		// TODO Auto-generated method stub
 		return BoardingColor;
 	}
-	
-	
+	/**
+	 * 
+	 * @return returns the x coord center point of the seat 
+	 */
+	public int getX()
+	{
+		return (int)(x+0.5*sideLength);
+	}
+	/**
+	 * 
+	 * @return returns the y coord center point of the seat 
+	 */
+	public int getY()
+	{
+		return (int)(y+0.5*sideLength);
+	}
 	
 }
