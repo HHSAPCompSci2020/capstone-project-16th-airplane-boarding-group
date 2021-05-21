@@ -12,6 +12,7 @@ import java.awt.Color;
  *
  */
 import java.awt.Toolkit;
+import java.util.ArrayList;
 
 import processing.core.PApplet;
 public class Aircraft {
@@ -188,5 +189,77 @@ public class Aircraft {
 	}
 		return occupied;
 	
-}
+	}
+	/**
+	 * *important* before passenger starts moving, they have an assigned seat they know they go to
+	 * the logic is that within the boarding group color passenger is in, they try to go to the 
+	 * furthest seat(the biggest x value) when there is still seats to choose from within those x values
+	 * the method randomly picks a seat
+	 * @param color specific boarding color of the passenger finding a seat
+	 * @return returns the seat the passenger is assigned to
+	 * @post the seat that was chosen becomes taken 
+	 */
+	public Seats getLastSeatofBoardingGroup(Color color)
+	{
+		ArrayList<Integer> potentialSeats = new ArrayList<Integer>();
+		int furthest = 0;
+		for(int i = 0;i<aisle1.length;i++)
+		{
+			for(int j=0;j<aisle1[0].length;j++)
+			{
+				if(aisle1[i][j].getColor().equals(color)&& ! aisle1[i][j].getSeatTaken())
+				{
+					if(j>furthest)
+						furthest = j;
+					
+				}
+			}	
+		}
+		for(int i = 0;i<aisle2.length;i++)
+		{
+			for(int j=0;j<aisle2[0].length;j++)
+			{
+				//System.out.println("yo");
+				if(aisle2[i][j].getColor().equals(color)&& ! aisle2[i][j].getSeatTaken())
+				{
+					if(j>furthest)
+						furthest = j;	
+				}
+			}
+		}
+		
+		for(int i=0;i<aisle1.length;i++)
+		{
+			if(aisle1[i][furthest].getColor().equals(color) && ! aisle1[i][furthest].getSeatTaken())
+			{
+				potentialSeats.add(i);
+			
+			}
+		}
+		for(int i=0;i<aisle2.length;i++)
+		{
+			if(aisle2[i][furthest].getColor().equals(color) && ! aisle2[i][furthest].getSeatTaken())
+			{
+				potentialSeats.add(i+3);
+				
+			}
+		}
+		if(potentialSeats.size()==0)
+		{
+			System.out.println("brrrrrrrrrr");
+		}
+		int index = (int)(Math.random()*potentialSeats.size());
+		int chosenRow = potentialSeats.get(index);
+		if(chosenRow>=3)
+		{
+			aisle2[chosenRow-3][furthest].setSeatTaken();
+			return aisle2[chosenRow-3][furthest];
+		}
+		else {
+			aisle1[chosenRow][furthest].setSeatTaken();
+			return aisle1[chosenRow][furthest];
+		}
+		
+		
+	}
 }
