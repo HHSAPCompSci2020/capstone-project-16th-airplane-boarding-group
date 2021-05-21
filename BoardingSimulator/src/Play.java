@@ -27,7 +27,8 @@ public class Play  extends Screen{
 			if(passengers[i]!=null ) {
 				
 			    passengers[i].draw(surface);
-			    passengers[i].act(200,200);
+			    
+			    passengers[i].act(passengers[i].getSeatX(),passengers[i].getSeatY());
 			    
 			}
 		}
@@ -75,6 +76,9 @@ public class Play  extends Screen{
 				for(int j=0; j<airplane.getOccupiedGroups(boardingGroups[i]); j++) {
 					// allows the passengers to spawn without worrying about having a certain condition when the previous or the next one spawns
 					passengers[passengernumber]= new Passenger(SPAWN_X-100*passengernumber,SPAWN_Y,boardingGroups[i]);
+					Seats tempSeat = airplane.getLastSeatofBoardingGroup(boardingGroups[i]);
+					passengers[passengernumber].setSeatX(tempSeat.getX());
+					passengers[passengernumber].setSeatY(tempSeat.getY());
 					passengernumber++;
 				}
 			}
