@@ -22,21 +22,23 @@ public class Play  extends Screen{
 	public void draw() {
 		airplane.draw(surface);
 		time.draw(surface);
-		
+	
 		for(int i = 0; i < passengers.length; i++) {
-			if(passengers[i]!=null) {
-			     /*try {
-			    	 TimeUnit.SECONDS.sleep(2);
-			        } catch (InterruptedException ie)
-			        {
-			            
-			        }
-			        */
-				passengers[i].draw(surface);
+			if(passengers[i]!=null ) {
 				
+			    passengers[i].draw(surface);
+			    
+			    passengers[i].act(passengers[i].getSeatX(),passengers[i].getSeatY());
+			    
 			}
 		}
+		
+			        
 			
+		
+	
+			
+		
 		
 	}
 	
@@ -60,6 +62,7 @@ public class Play  extends Screen{
 		passengers = new Passenger[airplane.getOccupiedSeats()];
 		//System.out.println("red number of seats: " + airplane.getOccupiedGroups(boardingGroups[0]));
 		setPassengerToGroups();
+
 		
 	}
 	/**
@@ -71,12 +74,15 @@ public class Play  extends Screen{
 		for(int i=0; i<boardingGroups.length;i++) {
 			
 				for(int j=0; j<airplane.getOccupiedGroups(boardingGroups[i]); j++) {
-					passengers[passengernumber]= new Passenger(SPAWN_X,SPAWN_Y,boardingGroups[i]);
+					// allows the passengers to spawn without worrying about having a certain condition when the previous or the next one spawns
+					passengers[passengernumber]= new Passenger(SPAWN_X-100*passengernumber,SPAWN_Y,boardingGroups[i]);
+					Seats tempSeat = airplane.getLastSeatofBoardingGroup(boardingGroups[i]);
+					passengers[passengernumber].setSeatX(tempSeat.getX());
+					passengers[passengernumber].setSeatY(tempSeat.getY());
 					passengernumber++;
 				}
 			}
-		for(int i = 0; i < passengers.length; i++) {
-		}
+		
 			
 	}
 
