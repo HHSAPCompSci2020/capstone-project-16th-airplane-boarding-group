@@ -135,6 +135,8 @@ public class Aircraft {
 	public Seats[][] getaisle2() {
 		return aisle2;
 	}
+	
+	
 	public int getOccupiedSeats() {
 		int occupied = 0;
 		for(int i = 0;i<aisle1.length;i++)
@@ -161,6 +163,7 @@ public class Aircraft {
 		}
 		return occupied;
 	}
+	
 	public int getOccupiedGroups(Color color)
 	{
 		int occupied= 0;

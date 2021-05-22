@@ -27,18 +27,24 @@ public class Play  extends Screen{
 			if(passengers[i]!=null ) {
 				
 			    passengers[i].draw(surface);
-			    
+//			    if(i!= (passengers.length-1)) {
+//			    	if(passengers[i].isColliding(passengers[i+1])) {
+//			    		passengers[i].setSpeed(passengers[i].getSpeed()/2);
+//			    	}
+//			    }
+			    if((i+1)< passengers.length-1) {
+				    if(passengers[i].isColliding(passengers[i+1])) {
+				    	passengers[i].setSpeed(1);
+				    }
+				    else {
+				    	passengers[i].setSpeed(2);
+				    }
+			    }
 			    passengers[i].act(passengers[i].getSeatX(),passengers[i].getSeatY());
 			    
 			}
 		}
-		
-			        
 			
-		
-	
-			
-		
 		
 	}
 	
