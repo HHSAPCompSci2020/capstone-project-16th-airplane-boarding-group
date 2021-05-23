@@ -1,10 +1,12 @@
 import java.awt.Color;
+
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
 import processing.core.PApplet;
+
 import java.util.concurrent.*;
-public class Passenger {
+public class Passenger extends PApplet{
 	//a
 	private int x, y;
 	private final int RADIUS = 50;
@@ -14,7 +16,7 @@ public class Passenger {
 	private int seatX,seatY;
 	private int delay = 0;
 	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		
+	processing.core.PImage photo; 
 	public Passenger(int x, int y,Color passengerColor) {
 		this.x = x;
 		this.y = y;
@@ -26,19 +28,27 @@ public class Passenger {
 	}
 	
 	public void draw(PApplet marker) {
-		marker.fill(0);
+		
+		marker.fill(255,69,0);
 		marker.circle(x, y, RADIUS);
+		if(isSeated())
+		{
+			marker.fill(255,215,0);
+			marker.circle(x,y,RADIUS/2);
+		
+		}
+		
 	}
-	
+
 	private void walk(int seatX, int seatY) 
 	{		
-		if(seatX - 10 <= x && x <= seatX + 10) {
+		if(seatX - 5<= x && x <= seatX + 5) {
 			x = seatX;
 			if(delay == 0) delay = Time.count;
 			
 			if(delay + 1 <= Time.count) {
 				
-				if(seatY - 25 <= y && y <= seatY + 25) {
+				if(seatY - 20 <= y && y <= seatY + 20) {
 					
 					y = seatY;
 					setSpeed(0);
