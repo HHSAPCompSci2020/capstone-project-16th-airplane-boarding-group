@@ -28,6 +28,7 @@ public class MainScreen extends Screen{
 	int queueLength = 100;
 	int queueHeight = 50;
 	int currentColor =0;
+	int maxColor = 0;
 	
 
 	/**
@@ -94,9 +95,23 @@ public class MainScreen extends Screen{
 		if(mouseX > 400 && mouseX < (500) && mouseY > 40 && mouseY < (90))
 		{
 			if(hasUsedColor()) {
+				
 				createBoardingGroupPressed= true;
-				currentColor++;
+				if(currentColor<boardingGroups.length-1) {
+					currentColor++;
+					if(currentColor>maxColor)
+					{
+						maxColor= currentColor;
+						System.out.println(maxColor);
+					}
+				}
+				
+				else {
+					maxColor=currentColor;
+					currentColor=0;
+				}
 				System.out.println("color changed");
+				
 			}
 			
 		}
@@ -127,7 +142,7 @@ public class MainScreen extends Screen{
 	}
 	
 	public Color[] getBoardingGroup() {
-		Color [] trimmedGroups =Arrays.copyOfRange(boardingGroups,0,currentColor+1);
+		Color [] trimmedGroups =Arrays.copyOfRange(boardingGroups,0,maxColor+1);
 		return trimmedGroups;
 	}
 /**
