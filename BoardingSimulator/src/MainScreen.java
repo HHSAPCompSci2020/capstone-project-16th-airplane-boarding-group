@@ -70,8 +70,9 @@ public class MainScreen extends Screen{
 		
 		
 		
-		if(createQueueButtonPressed)
+		if(createQueueButtonPressed) {
 			surface.fill(255, 0, 0);
+		}
 		else
 			surface.noFill();
 		
