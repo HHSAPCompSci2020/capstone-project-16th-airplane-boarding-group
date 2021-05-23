@@ -12,6 +12,7 @@ import java.awt.Color;
  *
  */
 import java.awt.Toolkit;
+import java.util.ArrayList;
 
 import processing.core.PApplet;
 public class Aircraft {
@@ -20,6 +21,7 @@ public class Aircraft {
 	Seats [][]aisle1 = new Seats[3][7];
 	Seats [][]aisle2 = new Seats[3][7];
 	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+	Time timer = new Time();
 	/**
 	 * initializes the aircraft with a default setting 
 	 */
@@ -192,4 +194,68 @@ public class Aircraft {
 		return occupied;
 	
 }
+	public Seats getLastSeatofBoardingGroup(Color color)
+	{
+		ArrayList<Integer> potentialSeats = new ArrayList<Integer>();
+		int furthest = 0;
+		for(int i = 0;i<aisle1.length;i++)
+		{
+			for(int j=0;j<aisle1[0].length;j++)
+			{
+				if(aisle1[i][j].getColor().equals(color)&& ! aisle1[i][j].getSeatTaken())
+				{
+					if(j>furthest)
+						furthest = j;
+
+				}
+			}	
+		}
+		for(int i = 0;i<aisle2.length;i++)
+		{
+			for(int j=0;j<aisle2[0].length;j++)
+			{
+				//System.out.println("yo");
+				if(aisle2[i][j].getColor().equals(color)&& ! aisle2[i][j].getSeatTaken())
+				{
+					if(j>furthest)
+						furthest = j;	
+				}
+			}
+		}
+
+		for(int i=0;i<aisle1.length;i++)
+		{
+			if(aisle1[i][furthest].getColor().equals(color) && ! aisle1[i][furthest].getSeatTaken())
+			{
+				potentialSeats.add(i);
+
+			}
+		}
+		for(int i=0;i<aisle2.length;i++)
+		{
+			if(aisle2[i][furthest].getColor().equals(color) && ! aisle2[i][furthest].getSeatTaken())
+			{
+				potentialSeats.add(i+3);
+
+			}
+		}
+		if(potentialSeats.size()==0)
+		{
+			System.out.println("brrrrrrrrrr");
+		}
+		int index = (int)(Math.random()*potentialSeats.size());
+		int chosenRow = potentialSeats.get(index);
+		if(chosenRow>=3)
+		{
+			aisle2[chosenRow-3][furthest].setSeatTaken();
+			return aisle2[chosenRow-3][furthest];
+		}
+		else {
+			aisle1[chosenRow][furthest].setSeatTaken();
+			return aisle1[chosenRow][furthest];
+		}
+		
+
+
+	}
 }

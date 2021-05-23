@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Play  extends Screen{
 	
-	private Time time = new Time();
+	private Time timer = new Time();
 	static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 	private static final int SPAWN_X = 100;
 	private static final int SPAWN_Y = (int) (screenSize.getHeight()*(37.0/72));
@@ -21,7 +21,11 @@ public class Play  extends Screen{
 	
 	public void draw() {
 		airplane.draw(surface);
-		time.draw(surface);
+		timer.draw(surface);
+		int x = 0;
+		if(passengers[x].getIsSeated()==true) {
+			timer.stop();
+		}
 	
 		for(int i = 0; i < passengers.length; i++) {
 			if(passengers[i]!=null ) {
@@ -41,7 +45,6 @@ public class Play  extends Screen{
 				    }
 			    }
 			    passengers[i].act(passengers[i].getSeatX(),passengers[i].getSeatY());
-			    
 			}
 		}
 			
@@ -87,6 +90,7 @@ public class Play  extends Screen{
 					passengers[passengernumber].setSeatY(tempSeat.getY());
 					passengernumber++;
 				}
+				
 			}
 		
 			

@@ -1,4 +1,4 @@
-import java.awt.Color;  
+import java.awt.Color;   
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Timer;
@@ -37,6 +37,7 @@ public class Time {
 		this.seconds=seconds;
 		this.minutes=minutes;
 		this.count=count;
+		stopNow = true;
 	}
 	/**
 	 * Draw method for the timer
@@ -56,19 +57,26 @@ public class Time {
 	 * 
 	 */
 	public int getSeconds() {
-		seconds++;
-		count = seconds/60;
-		
-		if((seconds%3600)==0&seconds!=0){
-			seconds=0;
-			minutes++;
+		if(stopNow) {
+			seconds++;
+			count = seconds/60;
+			
+			if((seconds%3600)==0&seconds!=0){
+				seconds=0;
+				minutes++;
+			}
 		}
 		
 		return count;
 	}
 	
+	/**
+	 * Stops timer
+	 * 
+	 */
 	public boolean stop() {
-		return false;
+		stopNow = false;
+		return stopNow;
 	}
 	/**
 	 * Returns the time in minutes

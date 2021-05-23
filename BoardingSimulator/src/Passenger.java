@@ -126,4 +126,8 @@ public class Passenger {
 	public int getSpeed() {
 		return speed;
 	}
+	
+	public boolean getIsSeated() {
+		return isSeated;
+	}
 }
