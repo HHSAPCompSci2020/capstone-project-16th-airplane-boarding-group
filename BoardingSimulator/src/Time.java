@@ -24,9 +24,10 @@ public class Time {
 	private long start;
 	private long total = 0;
 	
-	int count = 0;
-	int seconds = 0;
-	int minutes = 0;
+	private int count = 0;
+	private int seconds = 0;
+	private int minutes = 0;
+	private boolean stopNow; 
 	
 	/**
 	 * initializing values in timer
@@ -66,6 +67,9 @@ public class Time {
 		return count;
 	}
 	
+	public boolean stop() {
+		return false;
+	}
 	/**
 	 * Returns the time in minutes
 	 * 
