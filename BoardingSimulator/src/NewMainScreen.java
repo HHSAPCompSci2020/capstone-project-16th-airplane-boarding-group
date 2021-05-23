@@ -1,7 +1,7 @@
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-
+//a
 public class NewMainScreen extends Screen{
 	
 	//private QueueScreen queue;

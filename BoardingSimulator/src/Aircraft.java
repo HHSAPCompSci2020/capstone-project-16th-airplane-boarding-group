@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 import processing.core.PApplet;
 public class Aircraft {
+	//a
 	int length,width;
 	int x,y;
 	Seats [][]aisle1 = new Seats[3][7];
@@ -247,10 +248,7 @@ public class Aircraft {
 				
 			}
 		}
-		if(potentialSeats.size()==0)
-		{
-			System.out.println("brrrrrrrrrr");
-		}
+		
 		int index = (int)(Math.random()*potentialSeats.size());
 		int chosenRow = potentialSeats.get(index);
 		if(chosenRow>=3)

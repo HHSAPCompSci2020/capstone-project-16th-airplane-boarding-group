@@ -27,26 +27,49 @@ public class Play  extends Screen{
 			if(passengers[i]!=null ) {
 				
 			    passengers[i].draw(surface);
-//			    if(i!= (passengers.length-1)) {
-//			    	if(passengers[i].isColliding(passengers[i+1])) {
-//			    		passengers[i].setSpeed(passengers[i].getSpeed()/2);
-//			    	}
-//			    }
-			    if((i+1)< passengers.length-1) {
-				    if(passengers[i].isColliding(passengers[i+1])) {
-				    	passengers[i].setSpeed(1);
-				    }
-				    else {
-				    	passengers[i].setSpeed(2);
-				    }
+
+			    
 			    }
 			    passengers[i].act(passengers[i].getSeatX(),passengers[i].getSeatY());
+			    
+			    for(int j=0;j<passengers.length;j++)
+			    {
+			    	if(passengers[i].isColliding(passengers[j])) {
+			    		if(passengers[i].isSeated()) {
+			    			passengers[j].setSpeed(1);
+			    		} else {
+			    			passengers[j].setSpeed(0);
+			    		}
+			    	} else {
+			    		passengers[j].setSpeed(2);
+			    	}
+			    	if(passengers[0].getSpeed() == 0) {
+			    		passengers[0].setSpeed(2);
+			    	}
+			    	/*
+			    	if(j!=i)
+			    	{
+			    		if(passengers[i].isColliding(passengers[j]))
+			    		{
+			    			System.out.println("paseenger : " + i + "colliding with  passenger : " + j);
+			    			int waiter = Math.min(i,j);
+			    			passengers[waiter].wait(200);
+			    		}
+			    		else
+			    		{
+			    			passengers[j].setSpeed(2);
+			    			}
+			    			
+			    	}
+			    	*/
+			    }
+			    
 			    
 			}
 		}
 			
 		
-	}
+	
 	
 	/**
 	 * sets the boardingGroups array equal to the colors array

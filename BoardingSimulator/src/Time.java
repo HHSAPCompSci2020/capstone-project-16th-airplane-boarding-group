@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 import processing.core.PApplet;
 
 public class Time {
-	
+	//a
 	private int x,y;
 	private int width;
 	private int height;
@@ -24,7 +24,7 @@ public class Time {
 	private long start;
 	private long total = 0;
 	
-	int count = 0;
+	static int count = 0;
 	int seconds = 0;
 	int minutes = 0;
 	

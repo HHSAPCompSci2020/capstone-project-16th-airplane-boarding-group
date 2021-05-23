@@ -2,7 +2,7 @@ import java.awt.Color;
 import processing.core.PApplet;
 public class Seats 
 {
-	
+	//a
 	private Color BoardingColor;
 	private float x,y;
 	private float sideLength;

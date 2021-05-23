@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 @author Joshua Choi
 @coauthor 
 */
+//a
 public class MainScreen extends Screen{
 	
 	// screen no 0
@@ -44,6 +45,7 @@ public class MainScreen extends Screen{
 	 */
 	public void draw() {
 		boeing747.draw(surface);
+		surface.fill(255);
 		surface.rect(400,40,100,50);
 		surface.fill(0);
 		surface.text("click here",425,60);
@@ -102,6 +104,11 @@ public class MainScreen extends Screen{
 		boeing747.seatClick(mouseX,mouseY,boardingGroups[currentColor]);
 		
 		
+	}
+	public void mouseDragged(int mouseX,int mouseY)
+	{
+		if(currentColor<boardingGroups.length)
+			boeing747.seatClick(mouseX,mouseY,boardingGroups[currentColor]);
 	}
 	/**
 	 * changes boolean value depending on where the user clicks on the main screen
