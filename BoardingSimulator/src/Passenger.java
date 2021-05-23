@@ -1,24 +1,27 @@
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
 import processing.core.PApplet;
 import java.util.concurrent.*;
 public class Passenger {
-	
+	//a
 	private int x, y;
 	private final int RADIUS = 50;
-	private int speed;
+	private int  speed;
 	private Color passengerColor;
 	private boolean isSeated;
 	private int seatX,seatY;
-	
-	private int i;
-	
+	private int delay = 0;
+	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		
 	public Passenger(int x, int y,Color passengerColor) {
 		this.x = x;
 		this.y = y;
 		this.passengerColor=passengerColor;
 		
-		isSeated = false;
-		i = 0;
+		setSeated(false);
+	
 		speed = 2;
 	}
 	
@@ -28,72 +31,50 @@ public class Passenger {
 	}
 	
 	private void walk(int seatX, int seatY) 
-	{
-		if(seatX> x) {
-			x = x + speed;
-		}
-		
-		if(seatX == x) {
-			if(i == 0) {
-				speed = 1;
-				i++;
-			}
-			if(seatY > y) {
-				y = y + speed;
-				i++;
-			}
-			else if(seatY < y) {
-				if(i == 0) {
-					speed = 1;
+	{		
+		if(seatX - 10 <= x && x <= seatX + 10) {
+			x = seatX;
+			if(delay == 0) delay = Time.count;
+			
+			if(delay + 1 <= Time.count) {
+				
+				if(seatY - 25 <= y && y <= seatY + 25) {
+					
+					y = seatY;
+					setSpeed(0);
+					setSeated(true);
 				}
-				y = y - speed;
+				else if (seatY > y) {
+					y = y + speed;
+					
+				}
+				else if(seatY < y) {
+					y = y - speed;
+				}
 			}
-			else {
-				isSeated = true;
-			}
+		} else {
+			x += speed;
 		}
 		
 	}
 	public void act(int seatX, int seatY) {
 		walk(seatX,  seatY);
+		
 
 	}
 	
 	
-	private void locateSeat(int seatLocationX, int seatLocationY) {
-		if(isSeated==false) {
-			this.walk(seatLocationX,seatLocationY);
-			isSeated = true;
-		}
-		
-	}
+
 	
 	public boolean isColliding(Passenger other) {
-		boolean isColliding = false;
 		
-		int extremeX = other.getX() + RADIUS;
-		int extrmeY = other.getY() + RADIUS;
-		
-		int minX = other.getX() - RADIUS - 2;
-		int minY = other.getY() - RADIUS;
-		
-		int maxThisX = x + RADIUS;
-		int maxThisY = y + RADIUS;
-		
-		int minThisX = x - RADIUS;
-		int minThisY = y - RADIUS;
-		
-		if(((maxThisX<=extremeX && maxThisX>=minX)
-			||(minThisX<=extremeX && minThisX>=minX))
-			&&((maxThisY<=extrmeY && maxThisY>=minY)
-			||(minThisY<=extrmeY && minThisY>=minY))) {
-			
-			isColliding = true;
+		if(getX() - other.getX() < 70
+			&& Math.abs(getY() - other.getY()) < 70) {
+			return true;
+		} else {
+			return false;
 		}
-		return isColliding;
 	}
-	
-	
 	
 	public int getRadius() {
 		return RADIUS;
@@ -119,15 +100,19 @@ public class Passenger {
 	public void setSeatY(int y) {
 		seatY = y;
 	}
-	
 	public void setSpeed(int newSpeed) {
 		speed = newSpeed;
+	
 	}
 	public int getSpeed() {
 		return speed;
 	}
-	
-	public boolean getIsSeated() {
+
+	public boolean isSeated() {
 		return isSeated;
+	}
+
+	public void setSeated(boolean isSeated) {
+		this.isSeated = isSeated;
 	}
 }

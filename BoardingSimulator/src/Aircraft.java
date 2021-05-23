@@ -22,7 +22,6 @@ public class Aircraft {
 	Seats [][]aisle1 = new Seats[3][7];
 	Seats [][]aisle2 = new Seats[3][7];
 	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-	Time timer = new Time();
 	/**
 	 * initializes the aircraft with a default setting 
 	 */
@@ -194,7 +193,16 @@ public class Aircraft {
 	}
 		return occupied;
 	
-}
+	}
+	/**
+	 * *important* before passenger starts moving, they have an assigned seat they know they go to
+	 * the logic is that within the boarding group color passenger is in, they try to go to the 
+	 * furthest seat(the biggest x value) when there is still seats to choose from within those x values
+	 * the method randomly picks a seat
+	 * @param color specific boarding color of the passenger finding a seat
+	 * @return returns the seat the passenger is assigned to
+	 * @post the seat that was chosen becomes taken 
+	 */
 	public Seats getLastSeatofBoardingGroup(Color color)
 	{
 		ArrayList<Integer> potentialSeats = new ArrayList<Integer>();
@@ -207,7 +215,7 @@ public class Aircraft {
 				{
 					if(j>furthest)
 						furthest = j;
-
+					
 				}
 			}	
 		}
@@ -223,13 +231,13 @@ public class Aircraft {
 				}
 			}
 		}
-
+		
 		for(int i=0;i<aisle1.length;i++)
 		{
 			if(aisle1[i][furthest].getColor().equals(color) && ! aisle1[i][furthest].getSeatTaken())
 			{
 				potentialSeats.add(i);
-
+			
 			}
 		}
 		for(int i=0;i<aisle2.length;i++)
@@ -237,7 +245,7 @@ public class Aircraft {
 			if(aisle2[i][furthest].getColor().equals(color) && ! aisle2[i][furthest].getSeatTaken())
 			{
 				potentialSeats.add(i+3);
-
+				
 			}
 		}
 		
@@ -253,7 +261,6 @@ public class Aircraft {
 			return aisle1[chosenRow][furthest];
 		}
 		
-
-
+		
 	}
 }
