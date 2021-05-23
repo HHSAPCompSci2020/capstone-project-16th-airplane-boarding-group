@@ -90,8 +90,6 @@ public class QueueScreen extends Screen{
 			backButton = true;
 		if(mouseX > playX && mouseX < (playX+buttonWidth) && mouseY > buttonY && mouseY < (buttonY + buttonHeight))
 			playScreenButtonPressed = true;
-		if(mouseX > doneX && mouseX < (doneX+buttonWidth) && mouseY > buttonY && mouseY < (buttonY + buttonHeight))
-			donePressed = true;
 	}
 	/**
 	 * Called when the mouse is released sets boolean values to false and is responsible for choosing the next screen
