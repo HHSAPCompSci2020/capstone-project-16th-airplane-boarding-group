@@ -166,7 +166,7 @@ public class QueueScreen extends Screen{
 			int width = (int)(initialList[i].getExtent());
 			if(mouseX > positionX && mouseX < (width + positionX)&& mouseY > positionY && mouseY < (width + positionY)) {
 		
-				initialList[i].setX(mouseX - width/2);
+				//initialList[i].setX(mouseX - width/2);
 				initialList[i].setY(mouseY - width/2);
 				// && mouseY > positionY && mouseY < (width + positionY)
 			}
