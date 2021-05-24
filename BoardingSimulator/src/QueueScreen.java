@@ -132,7 +132,7 @@ public class QueueScreen extends Screen{
 	}
 	
 	private void sortIntoFinal() {
-		
+		boolean sort = false;
 		ArrayList<Integer> ofYValues = new ArrayList<Integer>();
 		int[] indices = new int[initialList.length];
 		for(int i = 0; i < initialList.length; i++) {
@@ -141,16 +141,26 @@ public class QueueScreen extends Screen{
 		Collections.sort(ofYValues);
 		
 		for(int i = 0; i < ofYValues.size(); i++) {
-			for(int n = 0; n < initialList.length; n++) {
-				if(ofYValues.get(i) == initialList[n].getY())
-					indices[n] = i;
+			if((i+1) < ofYValues.size()) {
+				if(ofYValues.get(i+1) == ofYValues.get(i)) {
+					finalList = boardingGroups;
+					sort = true;
+					break;
+				}
 			}
 		}
-		for(int i = 0; i < indices.length; i++) {
-			finalList[i] = new Color(initialList[indices[i]].getRed(), 
-					initialList[indices[i]].getGreen(), initialList[indices[i]].getBlue());
+		if(!sort) {
+			for(int i = 0; i < ofYValues.size(); i++) {
+				for(int n = 0; n < initialList.length; n++) {
+					if(ofYValues.get(i) == initialList[n].getY())
+						indices[n] = i;
+				}
+			}
+			for(int i = 0; i < indices.length; i++) {
+				finalList[i] = new Color(initialList[indices[i]].getRed(), 
+						initialList[indices[i]].getGreen(), initialList[indices[i]].getBlue());
+			}
 		}
-		
 	}
 	
 	/**
