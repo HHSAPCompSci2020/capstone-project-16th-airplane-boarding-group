@@ -48,6 +48,7 @@ public class MainScreen extends Screen{
 		boeing747.draw(surface);
 		surface.fill(255);
 		surface.rect(400,40,100,50);
+		surface.fill(255);
 		surface.fill(0);
 		surface.text("click here",425,60);
 		surface.text("to change color",405,80);

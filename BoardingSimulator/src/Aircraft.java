@@ -27,14 +27,27 @@ public class Aircraft {
 	 */
 	public Aircraft() {
 		
-		x=0;
-		y=(int) screenSize.getHeight()/8;
-		// later update this so it matches the size of the adjustable panel, so get the variable somehow from jpanel
-		width= (int) screenSize.getWidth();
-		length = (int) (screenSize.getHeight()*1.5)/2;
+		x = (int) (screenSize.getWidth()*0.2);
+		y = (int)(screenSize.getHeight()*0.1);
+		width = (int)(screenSize.getHeight()- (2*y));
+		length = (int)(screenSize.getWidth() - x);
+		
+//		x=0;
+//		y=(int) screenSize.getHeight()/8;
+//		// later update this so it matches the size of the adjustable panel, so get the variable somehow from jpanel
+//		length= (int) screenSize.getWidth();
+//		width = (int) (screenSize.getHeight()*1.5)/2;
 		this.fillValues();
 		System.out.println("Use Full Screen for maximum experience");
 
+	}
+	
+	public Aircraft(int x, int y, int length, int width) {
+		this.x = x;
+		this.y = y;
+		this.length = length;
+		this.width = width;
+		this.fillValues();
 	}
 	/** 
 	 * Calls the given Processing PApplet to the draw method in the Seats classes for individual seats
@@ -46,7 +59,7 @@ public class Aircraft {
 	public void draw(PApplet marker)
 	{
 		marker.fill(153);
-		marker.rect(x,y,width,length);
+		marker.rect(x,y,length,width);
 		marker.fill(255,255,255);
 		for(int i=0;i<aisle1.length;i++) {
 			for(int j=0;j<aisle1[0].length;j++)

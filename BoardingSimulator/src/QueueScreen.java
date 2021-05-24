@@ -13,14 +13,13 @@ public class QueueScreen extends Screen{
 	private int buttonY  = 20;
 	private int backX = 40;
 	private int playX = 150;
-	private int doneX = 260;
+
 	private int buttonWidth = 100;
 	private int buttonHeight = 50;
 	
 	private boolean playScreenButtonPressed;
 	private boolean backButton;
-	private boolean donePressed;
-	
+
 	private Color[] boardingGroups;
 	private Rectangle[] initialList;
 	private Color[] finalList;
@@ -31,7 +30,6 @@ public class QueueScreen extends Screen{
 	 */
 	public QueueScreen(DrawingSurface marker) {
 		super(marker);
-		donePressed = false;
 		playScreenButtonPressed = false;
 		backButton = false;
 		
@@ -41,6 +39,9 @@ public class QueueScreen extends Screen{
 	 */
 	public void draw() {
 		
+		surface.fill(0);
+		surface.text("In order to create a queue arrange all boardingGroups in a vertical line", 300, 50);
+		surface.noFill();
 		if(backButton)
 			surface.fill(255,0,0);
 		else 
@@ -54,20 +55,13 @@ public class QueueScreen extends Screen{
 			surface.fill(255,0,0);
 		else 
 			surface.fill(255);
-		surface.rect(playX, buttonY, buttonWidth, buttonHeight);
+		surface.rect(playX, buttonY, buttonWidth+30, buttonHeight);
 		
 		surface.fill(0);
-		surface.text("queue #1", 175, 50);
+		surface.text("Go to simulation", 170, 50);
 		
-		if(donePressed)
-			surface.fill(255,0,0);
-		else 
-			surface.fill(255);
-		surface.rect(doneX, buttonY, buttonWidth, buttonHeight);
 		
-		surface.fill(0);
-		surface.text("queue #2", 285, 50);
-		
+
 		for(int i = 0; i < initialList.length; i++) {
 	
 			surface.fill(initialList[i].getRed(), initialList[i].getGreen(), initialList[i].getBlue());
@@ -97,10 +91,9 @@ public class QueueScreen extends Screen{
 	 */
 	public int mouseReleased() {
 		int index = 1;
-		if(playScreenButtonPressed || donePressed) {
+		if(playScreenButtonPressed) {
 			sortIntoFinal();
 			playScreenButtonPressed = false;
-			donePressed = false;
 			index = 2;
 		}
 		if(backButton) {
