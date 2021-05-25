@@ -78,7 +78,7 @@ Main - the main method of the whole program
 Drawing Surface- responsible for GUI, interactive inputs with the user
 Aircraft - class represents the airplane of the class, it's responsible for drawing the seats
 Passenger - The individuals found in the boarding group
-Timer - A class designed to track the time spent in boarding the groups
+Time - A class designed to track the time spent in boarding the groups
 Seats - The setup of how the seating phase of the simulation is portrayed
 Screen - The superclass that acts as level states in the program
 MainScreen - The primary screen showcasing the aircraft and options able to be transversed
@@ -93,7 +93,7 @@ List the group members and describe how each member contributed to the completio
 
 Joshua Choi: Project Idea, README, Aircraft,  Seats, Main ,Main Screen,Timer,array algorithms and the logistics of  a boarding system
 
-Vamsee Krishna Vusuwandla: README,  Timer
+Vamsee Krishna Vusuwandla: README,  Timer, UML, Passenger, PlayScreen, MainScreen & QueueScreen Updated GUI
 
 Aryan Keskar: Drawing surface, GUI Interactive, html documentation, UML,  Aircraft, Passanger, QueueScreen 
 
