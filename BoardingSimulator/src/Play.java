@@ -13,6 +13,10 @@ public class Play  extends Screen{
 	private Color[] boardingGroups;
 	private Passenger[] passengers;
  
+	/**
+	 * calls the super constructor
+	 * @param marker is a parameter of the constructor
+	 */
 	public Play(DrawingSurface marker) {
 		super(marker);
 		
@@ -48,22 +52,7 @@ public class Play  extends Screen{
 			    	if(passengers[0].getSpeed() == 0) {
 			    		passengers[0].setSpeed(2);
 			    	}
-			    	/*
-			    	if(j!=i)
-			    	{
-			    		if(passengers[i].isColliding(passengers[j]))
-			    		{
-			    			System.out.println("paseenger : " + i + "colliding with  passenger : " + j);
-			    			int waiter = Math.min(i,j);
-			    			passengers[waiter].wait(200);
-			    		}
-			    		else
-			    		{
-			    			passengers[j].setSpeed(2);
-			    			}
-			    			
-			    	}
-			    	*/
+			    
 			    }
 			    
 			    
@@ -126,9 +115,7 @@ public class Play  extends Screen{
 
 		
 	}
-	/**
-	 * creates new passenger objects, gives different values according to the color of the boarding group. 
-	 */
+	
 	private void setPassengerToGroups() {
 		
 		int passengernumber=0;
@@ -146,7 +133,9 @@ public class Play  extends Screen{
 		
 			
 	}
-
+	/**
+	 * @return the index of the current screen, since this is the last screen
+	 */
 	public int mouseReleased() {
 		return 2;
 	}

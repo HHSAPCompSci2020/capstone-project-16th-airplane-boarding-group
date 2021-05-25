@@ -121,8 +121,10 @@ public class MainScreen extends Screen{
 		
 		
 	}
-	public void mouseDragged(int mouseX,int mouseY)
-	{
+	/**
+	 * MouseDragged is called when the mouse is dragged 
+	 */
+	public void mouseDragged(int mouseX,int mouseY){
 		if(currentColor<boardingGroups.length)
 			boeing747.seatClick(mouseX,mouseY,boardingGroups[currentColor]);
 	}
@@ -202,6 +204,10 @@ public class MainScreen extends Screen{
 		
 		}
 	
+	/**
+	 * 
+	 * @return aircraft instance in the class
+	 */
 	public Aircraft getAircraft() {
 		return boeing747;
 	}
