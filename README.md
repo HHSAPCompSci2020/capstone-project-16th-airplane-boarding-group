@@ -93,7 +93,7 @@ List the group members and describe how each member contributed to the completio
 
 Joshua Choi: Project Idea, README, Aircraft,  Seats, Main ,Main Screen,Timer,array algorithms and the logistics of  a boarding system
 
-Vamsee Krishna Vusuwandla: README,  Timer, UML, Passenger, PlayScreen, MainScreen & QueueScreen Updated GUI
+Vamsee Krishna Vusuwandla: README,  Timer, UML, PlayScreen, MainScreen & QueueScreen Updated GUI, Video Editor
 
 Aryan Keskar: Drawing surface, GUI Interactive, html documentation, UML,  Aircraft, Passanger, QueueScreen 
 
