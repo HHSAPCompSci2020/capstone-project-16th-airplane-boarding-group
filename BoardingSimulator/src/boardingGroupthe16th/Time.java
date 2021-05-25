@@ -92,6 +92,10 @@ public class Time {
 	public int getHeight() {
 		return height;
 	}
+	/**
+	 * Stops the Timer when called
+	 * 
+	 */
 	public void allSeated()
 	{
 		allSeated = true;
