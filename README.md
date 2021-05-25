@@ -1,7 +1,7 @@
 # capstone-project-16th-airplane-boarding-group
 Boarding Simulation
 Authors: Aryan Keskar, Joshua Choi, Vamsee Krishna Vusuwandla
-Revision: 4/23/2021
+Revision: 5/24/2021
 
 Courtesy for CGP Grey: Youtube
 Introduction: 
