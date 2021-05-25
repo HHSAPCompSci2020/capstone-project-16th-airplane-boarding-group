@@ -18,6 +18,9 @@ public class DrawingSurface extends PApplet {
 	private Screen activeScreen;
 	ArrayList<Screen> screens = new ArrayList<Screen>();
 	
+	/**
+	 * Initializes the drawingSurface by loading all the screens in the program into an ArrayList
+	 */
 	public DrawingSurface() {
 		screen1 = new MainScreen(this);
 		screens.add(screen1);
@@ -30,23 +33,32 @@ public class DrawingSurface extends PApplet {
 		
 		activeScreen = screens.get(0);
 	}
-	
+	/**
+	 * Draws the active Screen
+	 */
 	public void draw() {
 		background(255);
 		activeScreen.draw();
 		
 	}
-	
+	/**
+	 * Is called when the mouse is pressed, checks if any button was pressed and decides further actions accordingly
+	 */
 	public void mousePressed() {
 		activeScreen.mousePressed(mouseX, mouseY);
 		
 	}
 	
+	/**
+	 * Is called when the mouse is dragged, checks if any element was dragged and decides further actions accordingly
+	 */
 	public void mouseDragged() {
 		activeScreen.mouseDragged(mouseX, mouseY);
 		
 	}
-	
+	/**
+	 * Called when mouse is released, it is responisble for loading the next screen
+	 */
 	public void mouseReleased() {
 		Color[] colors = null;
 		int numSeats = 0;

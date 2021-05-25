@@ -6,6 +6,12 @@ import java.awt.Toolkit;
 import processing.core.PApplet;
 
 import java.util.concurrent.*;
+
+/**
+ * @author Joshua 
+ * @author Aryan
+ *
+ */
 public class Passenger extends PApplet{
 	//a
 	private int x, y;

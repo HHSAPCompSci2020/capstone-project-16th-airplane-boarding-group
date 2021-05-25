@@ -8,7 +8,7 @@ import java.awt.Graphics;
 import javax.swing.JFrame;
 /**
 @author Joshua Choi
-@coauthor 
+@coauthor Aryan Keskar
 */
 //a
 public class MainScreen extends Screen{
