@@ -91,13 +91,12 @@ Credits:
 [Gives credit for project components. This includes both internal credit (your group members) and external credit (other people, websites, libraries). To do this:
 List the group members and describe how each member contributed to the completion of the final program. This could be classes written, art assets created, leadership/organizational skills exercises, or other tasks. Initially, this is how you plan on splitting the work.
 
-Joshua Choi: Project Idea, README, Aircraft, Drawing Surface, Seats, Main 
+Joshua Choi: Project Idea, README, Aircraft,  Seats, Main ,Main Screen,Timer,array algorithms and the logistics of  a boarding system
 
-Vamsee Krishna Vusuwandla: README, Drawing Surface, Timer, Passanger,  UML, 
+Vamsee Krishna Vusuwandla: README,  Timer
 
-Aryan Keskar: Drawing surface, GUI Interactive, html documentation, UML, Seats, Aircraft, Passanger, Screen (+ subclasses)
+Aryan Keskar: Drawing surface, GUI Interactive, html documentation, UML,  Aircraft, Passanger, QueueScreen 
 
-Equal share with array algorithms and the logistics of programming a boarding system as this takes up most of the project.
 
 ** subject to change
 
