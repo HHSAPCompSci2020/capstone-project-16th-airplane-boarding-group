@@ -13,7 +13,7 @@ import java.util.concurrent.*;
  *
  */
 public class Passenger extends PApplet{
-	//a
+	
 	private int x, y;
 	private final int RADIUS = 50;
 	private int  speed;
