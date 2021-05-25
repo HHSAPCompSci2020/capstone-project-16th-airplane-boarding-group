@@ -1,6 +1,8 @@
+package boardingGroupthe16th;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Collections;
+
 import akeskar099.shapes.Rectangle;
 
 public class QueueScreen extends Screen{

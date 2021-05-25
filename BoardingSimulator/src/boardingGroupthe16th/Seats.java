@@ -1,3 +1,4 @@
+package boardingGroupthe16th;
 import java.awt.Color;
 import processing.core.PApplet;
 public class Seats 
