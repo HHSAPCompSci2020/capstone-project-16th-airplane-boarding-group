@@ -51,10 +51,8 @@ public class Aircraft {
 	}
 	/** 
 	 * Calls the given Processing PApplet to the draw method in the Seats classes for individual seats
-	 * @param marker
+	 * @param marker: an instance of PApplet or any extended class that helps draw the aircraft
 	 * 	
-	 * 
-	 * 
 	 */
 	public void draw(PApplet marker)
 	{
@@ -77,9 +75,7 @@ public class Aircraft {
 			
 		
 	}
-	/**
-	 * Creates a Seats object in the given location inside the aircraft
-	 */
+	
 	private void fillValues() {
 		for (int i=0;i<aisle1.length;i++)
 		{
@@ -115,10 +111,9 @@ public class Aircraft {
 		}
 	}
 	/**
-	 * 
+	 *  passes the method to the specific method of seat through arrays
 	 * @param mouseX
 	 * @param mouseY
-	 * passes the method to the specific method of seat through arrays
 	 */
 	public void seatClick(int mouseX,int mouseY,Color color)
 	{
@@ -150,7 +145,10 @@ public class Aircraft {
 		return aisle2;
 	}
 	
-	
+	/**
+	 * gets the number of occupied seats
+	 * @return int: number of occupied seats
+	 */
 	public int getOccupiedSeats() {
 		int occupied = 0;
 		for(int i = 0;i<aisle1.length;i++)
@@ -178,6 +176,11 @@ public class Aircraft {
 		return occupied;
 	}
 	
+	/**
+	 * gets the number of occupied seats
+	 * @param color: the color of the boarding group
+	 * @return int : number of occupied seats of that specific boarding group
+	 */
 	public int getOccupiedGroups(Color color)
 	{
 		int occupied= 0;
