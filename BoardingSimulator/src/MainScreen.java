@@ -54,7 +54,7 @@ public class MainScreen extends Screen{
 		surface.text("to change color",405,80);
 		surface.text("- click here every time you want to change to the next boarding group",520,40);
 		surface.text("- the first group is already set to red",520,60);
-		surface.text("- simply click each individual seat to assign them to a boarding group",520,80);
+		surface.text("- simply click or DRAG each individual seat to assign them to a boarding group",520,80);
 		surface.text("- the maximum boarding groups is 7, but less than the max is runnable",520,100);
 		
 		surface.fill(0);

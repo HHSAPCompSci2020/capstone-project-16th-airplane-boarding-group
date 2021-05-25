@@ -6,8 +6,9 @@ import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 /**
  * The timer class that keeps track of the time spent in the program, once run
+
  * 
- * @author primary author: Vamsee_Krishna_Vusuwandla
+ * @author primary author: Vamsee_Krishna_Vusuwandla , Joshua Choi
  * @version 5/19
  *
  */
@@ -23,6 +24,7 @@ public class Time {
 	private int screenHeight;
 	private long start;
 	private long total = 0;
+	private boolean allSeated=false;
 	
 	static int count = 0;
 	int seconds = 0;
@@ -55,12 +57,15 @@ public class Time {
 	 * 
 	 */
 	public int getSeconds() {
+		if(! allSeated)
+		{
 		seconds++;
 		count = seconds/60;
-		
+		}
 		if((seconds%3600)==0&seconds!=0){
 			seconds=0;
 			minutes++;
+		
 		}
 		
 		return count;
@@ -73,7 +78,7 @@ public class Time {
 	public int getMinutes() {
 		return minutes;
 	}
-	
+
 	public int getX() {
 		return x;
 	}
@@ -86,5 +91,11 @@ public class Time {
 	public int getHeight() {
 		return height;
 	}
-
+	public void allSeated()
+	{
+		allSeated = true;
+		System.out.println("seated status : filled");
+		
+		
+	}
 }

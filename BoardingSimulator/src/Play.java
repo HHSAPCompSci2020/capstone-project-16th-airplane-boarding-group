@@ -18,7 +18,9 @@ public class Play  extends Screen{
 		
 		// TODO Auto-generated constructor stub
 	}
-	
+	/**
+	 * draws according to the setPaseengerToGroups and is responsible for the move methods calling the passenger method
+	 */
 	public void draw() {
 		airplane.draw(surface);
 		time.draw(surface);
@@ -65,6 +67,36 @@ public class Play  extends Screen{
 			    }
 			    
 			    
+			}
+		
+			int passengersseatedtotal=0;
+			for(int i=0; i<passengers.length;i++)
+			{
+				
+				if(passengers[i].isSeated())
+				{
+					passengersseatedtotal++;
+				}
+				
+			}
+			
+			// current progress bar
+			surface.fill(0);
+			surface.text("Progress bar current status",425,15);
+			surface.fill(255);
+			surface.rect(425, 19, 300, 50);
+			surface.fill(0,255,0);
+			surface.rect(425,19,(int)(300*((double)passengersseatedtotal/passengers.length)),50);
+			surface.fill(250,0,0);
+			surface.text("current progress : "+ Math.floor(100*(double)passengersseatedtotal/passengers.length) + " %",800,19);
+			surface.fill(0);
+			surface.text("seats filled "+ passengersseatedtotal+" / seats in total" + passengers.length,425,50);
+
+			if (passengersseatedtotal == passengers.length)
+			{
+			time.allSeated();
+			
+			
 			}
 		}
 			
