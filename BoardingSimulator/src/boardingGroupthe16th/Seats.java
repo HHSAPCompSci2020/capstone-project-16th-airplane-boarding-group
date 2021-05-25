@@ -1,9 +1,12 @@
 package boardingGroupthe16th;
 import java.awt.Color;
 import processing.core.PApplet;
+/**
+@author Joshua
+*/
 public class Seats 
 {
-	//a
+
 	private Color BoardingColor;
 	private float x,y;
 	private float sideLength;
@@ -79,7 +82,7 @@ public class Seats
 	}
 	/**
 	 * 
-	 * @return returns the x coord center point of the seat 
+	 * @return returns the x coordinate center point of the seat 
 	 */
 	public int getX()
 	{
@@ -87,7 +90,7 @@ public class Seats
 	}
 	/**
 	 * 
-	 * @return returns the y coord center point of the seat 
+	 * @return returns the y coordinate center point of the seat 
 	 */
 	public int getY()
 	{

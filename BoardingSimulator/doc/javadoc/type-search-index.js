@@ -1,1 +1,0 @@
-typeSearchIndex = [{"p":"<Unnamed>","l":"Aircraft"},{"l":"All Classes","url":"allclasses-index.html"},{"p":"<Unnamed>","l":"DrawingSurface"},{"p":"<Unnamed>","l":"Main"},{"p":"<Unnamed>","l":"Passenger"},{"p":"<Unnamed>","l":"Seats"}]
