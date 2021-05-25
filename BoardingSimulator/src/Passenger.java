@@ -193,6 +193,7 @@ public class Passenger extends PApplet{
 	}
 	/**
 	 * sets  the isSeated value to the parameter
+	 * @param the boolean to which the isSeated field is set to
 	 */
 	public void setSeated(boolean isSeated) {
 		this.isSeated = isSeated;
